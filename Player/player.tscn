@@ -1,11 +1,19 @@
 [gd_scene format=3 uid="uid://byque4w54oowj"]
 
-[ext_resource type="Script" uid="uid://bjjijs730lfog" path="res://Scripts/PlayerInteraction.gd" id="1_l8h54"]
+[ext_resource type="Script" uid="uid://dqa2f3ps0e1od" path="res://Player/player_movement.gd" id="2_4ntmi"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l8h54"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hvfyp"]
 
-[node name="Node2D" type="Node2D" unique_id=1389009229]
-script = ExtResource("1_l8h54")
+[node name="Player" type="Node2D" unique_id=1389009229]
+script = ExtResource("2_4ntmi")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=1870851734]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=962064969]
+shape = SubResource("CapsuleShape2D_l8h54")
+script = ExtResource("2_4ntmi")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=855769695]
 
@@ -13,10 +21,6 @@ script = ExtResource("1_l8h54")
 shape = SubResource("CapsuleShape2D_hvfyp")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=111271712]
-
-[node name="InteractionArea" type="Area2D" parent="." unique_id=1870851734]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=962064969]
 
 [connection signal="area_entered" from="InteractionArea" to="." method="_on_interaction_area_area_entered"]
 [connection signal="area_exited" from="InteractionArea" to="." method="_on_interaction_area_area_exited"]
