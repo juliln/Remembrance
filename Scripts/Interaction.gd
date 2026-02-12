@@ -3,7 +3,7 @@ class_name Interactable
 
 @export var dialogue_text: String = ""
 
-func interact(player):
+func interact(_player):
 	if DialogueManager.is_open:
 		return
 	if dialogue_text != "":
