@@ -2,6 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://byque4w54oowj" path="res://Player/player.tscn" id="1_cx4r1"]
 
-[node name="Node2D" type="Node2D" unique_id=1211579783]
+[node name="area1(demo)" type="Node2D" unique_id=1211579783]
 
 [node name="Player" parent="." unique_id=1770667363 instance=ExtResource("1_cx4r1")]
+
+[node name="TileMap" type="TileMap" parent="." unique_id=284213811]
+format = 2

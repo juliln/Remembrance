@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m1br11168agb"
-path="res://.godot/imported/_4_1.png-775d338c0f123a266d55689a526e6e71.ctex"
+uid="uid://b0ue02kv4rufj"
+path="res://.godot/imported/TX Plant with Shadow.png-4a8f61f46cdfae78a3a375a1d5975ba2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cgs/_4_1.png"
-dest_files=["res://.godot/imported/_4_1.png-775d338c0f123a266d55689a526e6e71.ctex"]
+source_file="res://Assets/Tilesets/(sample)Pixel Art Top Down - Basic v1.2.3/Texture/Extra/TX Plant with Shadow.png"
+dest_files=["res://.godot/imported/TX Plant with Shadow.png-4a8f61f46cdfae78a3a375a1d5975ba2.ctex"]
 
 [params]
 
