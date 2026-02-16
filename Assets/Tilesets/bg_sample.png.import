@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lj5bqs05mqw1"
-path="res://.godot/imported/TX Struct.png-709af1311ee9c0d046b78e4d1f45c866.ctex"
+uid="uid://3mqh07vtmexr"
+path="res://.godot/imported/bg_sample.png-785dcc64d8e1cf69139597923ace07ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/(sample)Pixel Art Top Down - Basic v1.2.3/Texture/TX Struct.png"
-dest_files=["res://.godot/imported/TX Struct.png-709af1311ee9c0d046b78e4d1f45c866.ctex"]
+source_file="res://Assets/Tilesets/bg_sample.png"
+dest_files=["res://.godot/imported/bg_sample.png-785dcc64d8e1cf69139597923ace07ce.ctex"]
 
 [params]
 
