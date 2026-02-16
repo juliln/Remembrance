@@ -186,5 +186,7 @@ animation = &"3Idle"
 shape = SubResource("CapsuleShape2D_l8h54")
 script = ExtResource("1_l8h54")
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=766992625]
+
 [connection signal="area_entered" from="InteractionArea" to="." method="_on_interaction_area_area_entered"]
 [connection signal="area_exited" from="InteractionArea" to="." method="_on_interaction_area_area_exited"]

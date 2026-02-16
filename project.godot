@@ -23,7 +23,7 @@ DialogueManager="*uid://bo2xc71awl78h"
 
 window/size/viewport_width=2880
 window/size/viewport_height=1800
-window/stretch/scale=4.0
+window/stretch/scale=8.0
 window/stretch/scale_mode="integer"
 window/vsync/vsync_mode=0
 
