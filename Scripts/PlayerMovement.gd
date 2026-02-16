@@ -23,4 +23,3 @@ func _player_movement(_delta: float) -> void:
 	sprint = 1.5 if Input.get_action_strength("Sprint") else 1
 	velocity = (input_direction * move_speed * sprint)
 	move_and_slide()
-	
