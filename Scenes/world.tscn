@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://d32ie1x333e87"]
+
+[ext_resource type="PackedScene" uid="uid://byque4w54oowj" path="res://Player/player.tscn" id="1_5a7ea"]
+[ext_resource type="PackedScene" path="res://scenes/treasure_chest.tscn" id="3_6h1bx"]
+[ext_resource type="Texture2D" uid="uid://3mqh07vtmexr" path="res://assets/bg_sample.png" id="4_k0juu"]
+
+[node name="World" type="Node2D" unique_id=775343255]
+y_sort_enabled = true
+
+[node name="TilemapLayers" type="Node2D" parent="." unique_id=870922850]
+y_sort_enabled = true
+
+[node name="Entities" type="Node2D" parent="." unique_id=164836947]
+y_sort_enabled = true
+
+[node name="Player2" parent="Entities" unique_id=1770667363 instance=ExtResource("1_5a7ea")]
+light_mask = 4
+visibility_layer = 4
+collision_layer = 5
+collision_mask = 5
+
+[node name="Camera2D" type="Camera2D" parent="Entities/Player2" unique_id=845812744]
+position = Vector2(692, 360)
+zoom = Vector2(3, 3)
+limit_left = 495
+limit_top = 149
+limit_right = 888
+limit_bottom = 518
+
+[node name="TreasureChest" parent="Entities" unique_id=882954996 instance=ExtResource("3_6h1bx")]
+z_index = 2
+position = Vector2(562, 300)
+
+[node name="BgSample" type="Sprite2D" parent="." unique_id=1371552706]
+position = Vector2(691, 334)
+texture = ExtResource("4_k0juu")

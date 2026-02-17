@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b3pswhhngeocx"]
+
+[ext_resource type="Texture2D" uid="uid://djlbdaiscgd6u" path="res://assets/chat1.png" id="1_dj8aq"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ChatPopup" type="TextureRect" parent="."]
+offset_left = 278.0
+offset_top = 343.0
+offset_right = 886.0
+offset_bottom = 573.0
+texture = ExtResource("1_dj8aq")
