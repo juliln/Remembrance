@@ -13,35 +13,21 @@
 radius = 9.0
 height = 34.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_e622j"]
-
 [node name="World (demo)" type="Node2D" unique_id=1211579783]
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=2108580879]
+visible = false
 script = ExtResource("1_pm4xv")
 
-[node name="UI" type="TextureRect" parent="UI" unique_id=1923303244]
-visible = false
-offset_left = 50.000004
-offset_top = 70.0
-offset_right = 1137.0
-offset_bottom = 535.0
-scale = Vector2(0.20000094, 0.20000094)
+[node name="UI" type="Sprite2D" parent="UI" unique_id=2058697495]
+position = Vector2(162.00002, 122)
+scale = Vector2(0.20967744, 0.20967741)
 texture = ExtResource("2_rfsow")
-
-[node name="DialogueLabel" type="Label" parent="UI/UI" unique_id=998307869]
-layout_direction = 2
-layout_mode = 0
-offset_left = 74.99963
-offset_top = 259.9988
-offset_right = 762.99963
-offset_bottom = 308.9988
-text = "OMG it's Kris. You were in Brianna's dorm! You always wore that cute dress to any event. 
-"
 
 [node name="Player" parent="." unique_id=1770667363 instance=ExtResource("1_cx4r1")]
 z_index = 1
 scale = Vector2(2, 2)
+collision_mask = 5
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1961884604]
 limit_left = -199
@@ -66,11 +52,9 @@ scale = Vector2(0.7199969, 0.3007137)
 shape = SubResource("CapsuleShape2D_pm4xv")
 
 [node name="Area2D" type="Area2D" parent="Teacher" unique_id=705479053]
-position = Vector2(0, -8)
 script = ExtResource("7_e622j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teacher/Area2D" unique_id=717985247]
-shape = SubResource("CircleShape2D_e622j")
 
 [node name="Bouncy" type="Sprite2D" parent="." unique_id=170256896]
 position = Vector2(-85, -48)
@@ -83,18 +67,6 @@ scale = Vector2(0.7199969, 0.3007137)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bouncy/StaticBody2D" unique_id=441740437]
 shape = SubResource("CapsuleShape2D_pm4xv")
 
-[node name="Area2D" type="Area2D" parent="Bouncy" unique_id=618494494]
-position = Vector2(0, -8)
-script = ExtResource("7_e622j")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bouncy/Area2D" unique_id=607929427]
-shape = SubResource("CircleShape2D_e622j")
-
 [node name="Library" type="Sprite2D" parent="." unique_id=1632530613]
 position = Vector2(-1, -365)
 texture = ExtResource("5_yxfrt")
-
-[connection signal="area_entered" from="Teacher/Area2D" to="UI" method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Teacher/Area2D" to="UI" method="_on_area_2d_area_exited"]
-[connection signal="area_shape_entered" from="Teacher/Area2D" to="UI" method="_on_area_2d_area_shape_entered"]
-[connection signal="area_shape_exited" from="Teacher/Area2D" to="UI" method="_on_area_2d_area_shape_exited"]

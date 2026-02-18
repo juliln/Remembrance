@@ -170,6 +170,9 @@ height = 20.0
 [node name="Player" type="CharacterBody2D" unique_id=1770667363]
 script = ExtResource("2_4ntmi")
 
+[node name="Node2D" type="Node2D" parent="." unique_id=2042413631]
+script = ExtResource("1_l8h54")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1376738799]
 shape = SubResource("CapsuleShape2D_hvfyp")
 
@@ -182,8 +185,10 @@ animation = &"3Idle"
 [node name="InteractionArea" type="Area2D" parent="." unique_id=1870851734]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=962064969]
+scale = Vector2(1.4, 1.4)
 shape = SubResource("CapsuleShape2D_l8h54")
-script = ExtResource("1_l8h54")
 
-[connection signal="area_entered" from="InteractionArea" to="." method="_on_interaction_area_area_entered"]
-[connection signal="area_exited" from="InteractionArea" to="." method="_on_interaction_area_area_exited"]
+[connection signal="area_entered" from="InteractionArea" to="Node2D" method="_on_interaction_area_area_entered"]
+[connection signal="area_exited" from="InteractionArea" to="Node2D" method="_on_interaction_area_area_exited"]
+[connection signal="area_shape_entered" from="InteractionArea" to="Node2D" method="_on_interaction_area_area_shape_entered"]
+[connection signal="area_shape_exited" from="InteractionArea" to="Node2D" method="_on_interaction_area_area_shape_exited"]

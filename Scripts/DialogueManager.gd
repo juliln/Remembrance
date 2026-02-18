@@ -2,9 +2,21 @@ extends Node
 
 var is_open: bool = false
 
-func show_dialogue(text: String):
+@onready var label = $UI/DialogueLabel
+
+func show_ui():
 	is_open = true
-	print("DIALOGUE:", text)
+	label.text = "OMG it's Kris. You were in Brianna's dorm! You always wore that cute dress to any event."
+	label.visible = true
+	$UI.visible = true
 	
-func close_dialogue():
+func hide_ui():
 	is_open = false
+	label.visible = false
+	$UI.visible = false
+
+func toggle():
+	if is_open:
+		hide_ui()
+	else:
+		show_ui()

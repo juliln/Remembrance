@@ -29,13 +29,9 @@ offset_bottom = 535.0
 scale = Vector2(0.20000094, 0.20000094)
 texture = ExtResource("2_rfsow")
 
-[node name="DialogueLabel" type="Label" parent="UI/UI" unique_id=998307869]
-layout_direction = 2
-layout_mode = 0
-offset_left = 74.99963
-offset_top = 259.9988
-offset_right = 762.99963
-offset_bottom = 308.9988
+[node name="Label" type="Label" parent="UI" unique_id=998307869]
+offset_right = 40.0
+offset_bottom = 23.0
 text = "OMG it's Kris. You were in Brianna's dorm! You always wore that cute dress to any event. 
 "
 
