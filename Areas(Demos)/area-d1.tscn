@@ -91,7 +91,7 @@ script = ExtResource("7_e622j")
 shape = SubResource("CircleShape2D_e622j")
 
 [node name="Library" type="Sprite2D" parent="." unique_id=1632530613]
-position = Vector2(-1, -365)
+position = Vector2(-1, -386)
 texture = ExtResource("5_yxfrt")
 
 [connection signal="area_entered" from="Teacher/Area2D" to="UI" method="_on_area_2d_area_entered"]
