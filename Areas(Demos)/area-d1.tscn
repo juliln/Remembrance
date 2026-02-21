@@ -8,12 +8,17 @@
 [ext_resource type="Texture2D" uid="uid://cccpx848ve0pd" path="res://Assets/Sprites/Bouncy_Ref.png" id="4_yxfrt"]
 [ext_resource type="Texture2D" uid="uid://incb7e40msye" path="res://Assets/library_sample.png" id="5_yxfrt"]
 [ext_resource type="Script" uid="uid://c61paipajmrfb" path="res://Scripts/Interaction.gd" id="7_e622j"]
+[ext_resource type="Texture2D" uid="uid://0xruogllwq64" path="res://Assets/temp_hallway.jpg" id="9_y0flf"]
+[ext_resource type="Script" uid="uid://b84lbwr8mna21" path="res://Areas(Demos)/scenetransition.gd" id="10_425hk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pm4xv"]
 radius = 9.0
 height = 34.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e622j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psu18"]
+size = Vector2(81, 22)
 
 [node name="World (demo)" type="Node2D" unique_id=1211579783]
 
@@ -91,10 +96,27 @@ script = ExtResource("7_e622j")
 shape = SubResource("CircleShape2D_e622j")
 
 [node name="Library" type="Sprite2D" parent="." unique_id=1632530613]
-position = Vector2(-1, -386)
+position = Vector2(448, -316)
 texture = ExtResource("5_yxfrt")
+
+[node name="temp Hallway" type="Sprite2D" parent="." unique_id=578276101]
+position = Vector2(133, -308)
+scale = Vector2(0.207, 0.2018518)
+texture = ExtResource("9_y0flf")
+
+[node name="CameraAnchor" type="Marker2D" parent="temp Hallway" unique_id=361987872]
+
+[node name="RoomTransition" type="Area2D" parent="." unique_id=1051082484]
+position = Vector2(-1, -200)
+script = ExtResource("10_425hk")
+target_anchor = NodePath("../temp Hallway/CameraAnchor")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomTransition" unique_id=1696161372]
+position = Vector2(3.5, 1)
+shape = SubResource("RectangleShape2D_psu18")
 
 [connection signal="area_entered" from="Teacher/Area2D" to="UI" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Teacher/Area2D" to="UI" method="_on_area_2d_area_exited"]
 [connection signal="area_shape_entered" from="Teacher/Area2D" to="UI" method="_on_area_2d_area_shape_entered"]
 [connection signal="area_shape_exited" from="Teacher/Area2D" to="UI" method="_on_area_2d_area_shape_exited"]
+[connection signal="body_entered" from="RoomTransition" to="RoomTransition" method="_on_body_entered"]
