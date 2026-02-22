@@ -1,15 +1,13 @@
 [gd_scene format=3 uid="uid://cwqyk3efwo5hj"]
 
-[ext_resource type="PackedScene" uid="uid://byque4w54oowj" path="res://Player/player.tscn" id="1_cx4r1"]
-[ext_resource type="Script" uid="uid://bo2xc71awl78h" path="res://Scripts/DialogueManager.gd" id="1_pm4xv"]
-[ext_resource type="Texture2D" uid="uid://3mqh07vtmexr" path="res://Assets/bg_sample.png" id="2_12goh"]
-[ext_resource type="Texture2D" uid="uid://dvhtevhvodw87" path="res://Assets/UI.png" id="2_rfsow"]
-[ext_resource type="Texture2D" uid="uid://bncwh4fd0rwnf" path="res://Assets/Sprites/Teacher_Ref.png" id="3_65gtm"]
-[ext_resource type="Texture2D" uid="uid://cccpx848ve0pd" path="res://Assets/Sprites/Bouncy_Ref.png" id="4_yxfrt"]
-[ext_resource type="Texture2D" uid="uid://incb7e40msye" path="res://Assets/library_sample.png" id="5_yxfrt"]
-[ext_resource type="Script" uid="uid://c61paipajmrfb" path="res://Scripts/Interaction.gd" id="7_e622j"]
-[ext_resource type="Texture2D" uid="uid://0xruogllwq64" path="res://Assets/temp_hallway.jpg" id="9_y0flf"]
-[ext_resource type="Script" uid="uid://b84lbwr8mna21" path="res://Areas(Demos)/scenetransition.gd" id="10_425hk"]
+[ext_resource type="Script" uid="uid://bo2xc71awl78h" path="res://Scripts/DialogueManager.gd" id="1_keiqs"]
+[ext_resource type="Texture2D" uid="uid://dvhtevhvodw87" path="res://Assets/UI.png" id="2_uo2oc"]
+[ext_resource type="PackedScene" uid="uid://byque4w54oowj" path="res://Player/player.tscn" id="3_1ky4f"]
+[ext_resource type="Texture2D" uid="uid://3mqh07vtmexr" path="res://Assets/bg_sample.png" id="4_jw1vb"]
+[ext_resource type="Texture2D" uid="uid://bncwh4fd0rwnf" path="res://Assets/Sprites/Teacher_Ref.png" id="5_pgiba"]
+[ext_resource type="Script" uid="uid://c61paipajmrfb" path="res://Scripts/Interaction.gd" id="6_m82gj"]
+[ext_resource type="Texture2D" uid="uid://cccpx848ve0pd" path="res://Assets/Sprites/Bouncy_Ref.png" id="7_fsp1b"]
+[ext_resource type="PackedScene" uid="uid://bsxdpd33nqw3j" path="res://Areas(Demos)/door.tscn" id="9_m1npx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pm4xv"]
 radius = 9.0
@@ -17,13 +15,10 @@ height = 34.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e622j"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_psu18"]
-size = Vector2(81, 22)
-
 [node name="World (demo)" type="Node2D" unique_id=1211579783]
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=2108580879]
-script = ExtResource("1_pm4xv")
+script = ExtResource("1_keiqs")
 
 [node name="UI" type="TextureRect" parent="UI" unique_id=1923303244]
 visible = false
@@ -32,7 +27,7 @@ offset_top = 70.0
 offset_right = 1137.0
 offset_bottom = 535.0
 scale = Vector2(0.20000094, 0.20000094)
-texture = ExtResource("2_rfsow")
+texture = ExtResource("2_uo2oc")
 
 [node name="DialogueLabel" type="Label" parent="UI/UI" unique_id=998307869]
 layout_direction = 2
@@ -44,7 +39,7 @@ offset_bottom = 308.9988
 text = "OMG it's Kris. You were in Brianna's dorm! You always wore that cute dress to any event. 
 "
 
-[node name="Player" parent="." unique_id=1770667363 instance=ExtResource("1_cx4r1")]
+[node name="Player" parent="." unique_id=1770667363 instance=ExtResource("3_1ky4f")]
 z_index = 1
 scale = Vector2(2, 2)
 
@@ -56,12 +51,12 @@ limit_bottom = 171
 
 [node name="Garden" type="Sprite2D" parent="." unique_id=2014716353]
 position = Vector2(406, -117)
-texture = ExtResource("2_12goh")
+texture = ExtResource("4_jw1vb")
 offset = Vector2(-404, 103)
 
 [node name="Teacher" type="Sprite2D" parent="." unique_id=1270586347]
 position = Vector2(31, -92)
-texture = ExtResource("3_65gtm")
+texture = ExtResource("5_pgiba")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Teacher" unique_id=1240177152]
 position = Vector2(0, -8)
@@ -72,14 +67,14 @@ shape = SubResource("CapsuleShape2D_pm4xv")
 
 [node name="Area2D" type="Area2D" parent="Teacher" unique_id=705479053]
 position = Vector2(0, -8)
-script = ExtResource("7_e622j")
+script = ExtResource("6_m82gj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teacher/Area2D" unique_id=717985247]
 shape = SubResource("CircleShape2D_e622j")
 
 [node name="Bouncy" type="Sprite2D" parent="." unique_id=170256896]
 position = Vector2(-85, -48)
-texture = ExtResource("4_yxfrt")
+texture = ExtResource("7_fsp1b")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Bouncy" unique_id=1312556866]
 position = Vector2(0, -8)
@@ -90,33 +85,24 @@ shape = SubResource("CapsuleShape2D_pm4xv")
 
 [node name="Area2D" type="Area2D" parent="Bouncy" unique_id=618494494]
 position = Vector2(0, -8)
-script = ExtResource("7_e622j")
+script = ExtResource("6_m82gj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bouncy/Area2D" unique_id=607929427]
 shape = SubResource("CircleShape2D_e622j")
 
-[node name="Library" type="Sprite2D" parent="." unique_id=1632530613]
-position = Vector2(448, -316)
-texture = ExtResource("5_yxfrt")
+[node name="Doors" type="Node" parent="." unique_id=515185397]
 
-[node name="temp Hallway" type="Sprite2D" parent="." unique_id=578276101]
-position = Vector2(133, -308)
-scale = Vector2(0.207, 0.2018518)
-texture = ExtResource("9_y0flf")
+[node name="Door_N" parent="Doors" unique_id=1849409617 instance=ExtResource("9_m1npx")]
+position = Vector2(0, -198)
+destination_level_tag = "hallway"
+destination_door_tag = "W"
 
-[node name="CameraAnchor" type="Marker2D" parent="temp Hallway" unique_id=361987872]
-
-[node name="RoomTransition" type="Area2D" parent="." unique_id=1051082484]
-position = Vector2(-1, -200)
-script = ExtResource("10_425hk")
-target_anchor = NodePath("../temp Hallway/CameraAnchor")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomTransition" unique_id=1696161372]
-position = Vector2(3.5, 1)
-shape = SubResource("RectangleShape2D_psu18")
+[node name="Spawn" parent="Doors/Door_N" index="1" unique_id=478882881]
+position = Vector2(0, 10)
 
 [connection signal="area_entered" from="Teacher/Area2D" to="UI" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Teacher/Area2D" to="UI" method="_on_area_2d_area_exited"]
 [connection signal="area_shape_entered" from="Teacher/Area2D" to="UI" method="_on_area_2d_area_shape_entered"]
 [connection signal="area_shape_exited" from="Teacher/Area2D" to="UI" method="_on_area_2d_area_shape_exited"]
-[connection signal="body_entered" from="RoomTransition" to="RoomTransition" method="_on_body_entered"]
+
+[editable path="Doors/Door_N"]

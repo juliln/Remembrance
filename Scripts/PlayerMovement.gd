@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Player
+
 @export var move_speed: float = 70
 var current_dir = 0
 var sprint = 1.5
@@ -21,6 +23,20 @@ func _player_movement() -> void:
 	velocity = (input_direction * move_speed * sprint)
 	move_and_slide()
 
+func _ready():
+	NavigationManager.on_trigger_player_spawn.connect(_on_spawn)
+
+	
+func _on_spawn(position: Vector2, direction: String):
+	global_position = position
+	
+	await get_tree().process_frame
+	
+	var camera = $Camera2D
+	if camera:
+		camera.force_update_scroll()
+		
+	print("Spawning at:", position)
 
 func _on_interaction_area_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	pass # Replace with function body.

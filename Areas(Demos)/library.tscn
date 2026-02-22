@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://74whs5by0h77"]
+
+[ext_resource type="PackedScene" uid="uid://byque4w54oowj" path="res://Player/player.tscn" id="1_ct2lq"]
+[ext_resource type="Texture2D" uid="uid://incb7e40msye" path="res://Assets/library_sample.png" id="2_36nd1"]
+[ext_resource type="PackedScene" uid="uid://bsxdpd33nqw3j" path="res://Areas(Demos)/door.tscn" id="3_wda5m"]
+
+[node name="Library" type="Node2D" unique_id=1810042842]
+
+[node name="Player" parent="." unique_id=1770667363 instance=ExtResource("1_ct2lq")]
+z_index = 1
+position = Vector2(2, 67)
+scale = Vector2(2, 2)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1826505979]
+limit_left = -199
+limit_top = -198
+limit_right = 202
+limit_bottom = 171
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1938495296]
+texture = ExtResource("2_36nd1")
+
+[node name="Doors" type="Node" parent="." unique_id=500455474]
+
+[node name="Door_S" parent="Doors" unique_id=1849409617 instance=ExtResource("3_wda5m")]
+position = Vector2(-2, 157)
+destination_level_tag = "hallway"
+destination_door_tag = "E"
+spawn_direction = "right"
+
+[node name="CollisionShape2D" parent="Doors/Door_S" index="0" unique_id=1226092566]
+position = Vector2(2, -47)
+
+[node name="Spawn" parent="Doors/Door_S" index="1" unique_id=478882881]
+position = Vector2(4, -90)
+
+[editable path="Doors/Door_S"]
