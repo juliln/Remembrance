@@ -34,7 +34,7 @@ position = Vector2(-12, 0)
 position = Vector2(30, 0)
 
 [node name="Door_E" parent="Doors" unique_id=1651224247 instance=ExtResource("3_d4b86")]
-position = Vector2(322, 36)
+position = Vector2(334, 38)
 destination_level_tag = "library"
 destination_door_tag = "S"
 spawn_direction = "down"
