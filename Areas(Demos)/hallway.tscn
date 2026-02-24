@@ -7,7 +7,8 @@
 [node name="Hallway" type="Node2D" unique_id=121286954]
 
 [node name="Player" parent="." unique_id=1770667363 instance=ExtResource("1_d2oc0")]
-z_index = 1
+z_index = 2
+y_sort_enabled = true
 position = Vector2(-292, 32)
 scale = Vector2(2, 2)
 
