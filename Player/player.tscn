@@ -4,10 +4,6 @@
 [ext_resource type="Script" uid="uid://dqa2f3ps0e1od" path="res://Scripts/PlayerMovement.gd" id="2_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://b7jvpvqkka86k" path="res://Assets/Sprites/PlayerSprites.png" id="2_btcbx"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hvfyp"]
-radius = 6.0
-height = 20.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_pisgm"]
 atlas = ExtResource("2_btcbx")
 region = Rect2(0, 72, 42, 36)
@@ -173,18 +169,19 @@ script = ExtResource("2_4ntmi")
 [node name="Node2D" type="Node2D" parent="." unique_id=2042413631]
 script = ExtResource("1_l8h54")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1376738799]
-shape = SubResource("CapsuleShape2D_hvfyp")
-
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=203336454]
 position = Vector2(0, 5.9604645e-07)
 scale = Vector2(0.52734375, 0.5390625)
 sprite_frames = SubResource("SpriteFrames_pisgm")
 animation = &"3Idle"
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=359270278]
+polygon = PackedVector2Array(-5, -2, 5, -2, 5, 5, 4, 7, 2, 8, 0, 7, -4, 7, -5, 5)
+
 [node name="InteractionArea" type="Area2D" parent="." unique_id=1870851734]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=962064969]
+position = Vector2(-2.3841858e-07, -0.99999994)
 scale = Vector2(1.4, 1.4)
 shape = SubResource("CapsuleShape2D_l8h54")
 
