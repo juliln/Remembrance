@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://74whs5by0h77"]
 
 [ext_resource type="PackedScene" uid="uid://byque4w54oowj" path="res://Player/player.tscn" id="1_ct2lq"]
-[ext_resource type="Texture2D" uid="uid://incb7e40msye" path="res://Assets/library_sample.png" id="2_36nd1"]
+[ext_resource type="Texture2D" uid="uid://incb7e40msye" path="res://Assets/Tilesets/library_sample.png" id="2_36nd1"]
 [ext_resource type="PackedScene" uid="uid://bsxdpd33nqw3j" path="res://Areas(Demos)/door.tscn" id="3_wda5m"]
 
 [node name="Library" type="Node2D" unique_id=1810042842]

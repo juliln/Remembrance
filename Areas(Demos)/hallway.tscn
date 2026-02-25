@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://7rc4nmtxtnxt"]
 
 [ext_resource type="PackedScene" uid="uid://byque4w54oowj" path="res://Player/player.tscn" id="1_d2oc0"]
-[ext_resource type="Texture2D" uid="uid://dc4m455beyf64" path="res://Assets/hallway.png" id="1_ofho2"]
+[ext_resource type="Texture2D" uid="uid://dc4m455beyf64" path="res://Assets/Tilesets/hallway.png" id="1_ofho2"]
 [ext_resource type="PackedScene" uid="uid://bsxdpd33nqw3j" path="res://Areas(Demos)/door.tscn" id="3_d4b86"]
 
 [node name="Hallway" type="Node2D" unique_id=121286954]
