@@ -1,74 +1,182 @@
 [gd_scene format=3 uid="uid://bghba07mdgab3"]
 
-[ext_resource type="Texture2D" uid="uid://bj3wft3qodrb4" path="res://Assets/Cgs/_1.png" id="1_8vcau"]
+[ext_resource type="AudioStream" uid="uid://dc0xikso28ejn" path="res://Audio/OpeningCutscene.ogg" id="1_km3yx"]
 [ext_resource type="Animation" uid="uid://cbewp01dkv8p2" path="res://Resources/Flicker.tres" id="1_vi1t0"]
-[ext_resource type="Texture2D" uid="uid://btr21c7fxab4m" path="res://Assets/Cgs/_2.png" id="2_bl24s"]
-[ext_resource type="Texture2D" uid="uid://cfiy2yinrre43" path="res://Assets/Cgs/_3.png" id="5_u4yv4"]
-[ext_resource type="Texture2D" uid="uid://cau5twir4axl2" path="res://Assets/Cgs/_5.png" id="6_p30sb"]
-[ext_resource type="Texture2D" uid="uid://cwqrib4eahk4j" path="res://Assets/Cgs/_6.png" id="7_53jq0"]
-[ext_resource type="Texture2D" uid="uid://5dahe4fbky6a" path="res://Assets/Cgs/_5_5.png" id="7_qcoa3"]
-[ext_resource type="Texture2D" uid="uid://cssxwpoujqbkp" path="res://Assets/Cgs/_6_2.png" id="8_3q24f"]
-[ext_resource type="Texture2D" uid="uid://fh52cu1y1v8m" path="res://Assets/Cgs/_7.png" id="9_8ye5a"]
-[ext_resource type="Texture2D" uid="uid://dus3meuw6a5f5" path="res://Assets/Cgs/_8.png" id="11_pvbl2"]
-[ext_resource type="Texture2D" uid="uid://cgtfwn0ggp4ja" path="res://Assets/Cgs/_9.png" id="12_vi1t0"]
-[ext_resource type="Texture2D" uid="uid://biy3u31jpj367" path="res://Assets/Cgs/_10.png" id="13_1titf"]
+[ext_resource type="Texture2D" uid="uid://dqpd3o0owqrsy" path="res://Assets/cgs/First_Scene.png" id="2_dcvjt"]
+[ext_resource type="Texture2D" uid="uid://btr21c7fxab4m" path="res://Assets/cgs/_2.png" id="3_0joqj"]
+[ext_resource type="Script" path="res://Cutscenes/film_grain.gd" id="3_km3yx"]
+[ext_resource type="Texture2D" uid="uid://cv1ovg31n0mg1" path="res://Assets/cgs/_4.png" id="5_m3cpi"]
+[ext_resource type="Texture2D" uid="uid://cau5twir4axl2" path="res://Assets/cgs/_5.png" id="6_p30sb"]
+[ext_resource type="Texture2D" uid="uid://cwqrib4eahk4j" path="res://Assets/cgs/_6.png" id="7_53jq0"]
+[ext_resource type="Texture2D" uid="uid://dus3meuw6a5f5" path="res://Assets/cgs/_8.png" id="8_0joqj"]
+[ext_resource type="Texture2D" uid="uid://fh52cu1y1v8m" path="res://Assets/cgs/_7.png" id="9_8ye5a"]
+
+[sub_resource type="Animation" id="Animation_0joqj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Homeroom:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Friends:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pvbl2"]
 _data = {
-&"Flicker": ExtResource("1_vi1t0")
+&"Flicker": ExtResource("1_vi1t0"),
+&"RESET": SubResource("Animation_0joqj")
 }
 
-[node name="Flicker" type="Node2D"]
+[sub_resource type="Shader" id="Shader_qasit"]
+code = "shader_type canvas_item;
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_pvbl2")
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
+uniform float jitter_strength : hint_range(0.0, 0.01) = 0.002;
+uniform float speck_density : hint_range(0.0, 1.0) = 0.02;
+uniform float speck_speed : hint_range(0.0, 30.0) = 1;
+uniform float paper_strength : hint_range(0.0, 1.0) = 0.15;
+uniform vec4 paper_color : source_color = vec4(0.96, 0.93, 0.88, 1.0);
+
+float rand(vec2 uv) {
+    return fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453123);
 }
 
-[node name="_1" type="Sprite2D" parent="AnimationPlayer"]
-texture = ExtResource("1_8vcau")
+float noise(vec2 uv) {
+    vec2 i = floor(uv);
+    vec2 f = fract(uv);
+    float a = rand(i);
+    float b = rand(i + vec2(1.0, 0.0));
+    float c = rand(i + vec2(0.0, 1.0));
+    float d = rand(i + vec2(1.0, 1.0));
+    vec2 u = f * f * (3.0 - 2.0 * f);
+    return mix(a, b, u.x) + (c - a) * u.y * (1.0 - u.x) + (d - b) * u.x * u.y;
+}
 
-[node name="_2" type="Sprite2D" parent="AnimationPlayer"]
+void fragment() {
+    vec2 uv = SCREEN_UV;
+    
+    // sketch line jitter - whole image wobbles slightly
+    float jitter_time = floor(TIME * 12.0);
+    uv.x += (rand(vec2(jitter_time, 0.1)) - 0.5) * jitter_strength;
+    uv.y += (rand(vec2(0.1, jitter_time)) - 0.5) * jitter_strength;
+    
+    // per row micro jitter like hand retracing
+    float row = floor(uv.y * 100.0);
+    uv.x += (rand(vec2(row, jitter_time)) - 0.5) * jitter_strength * 0.5;
+    
+    vec4 screen = texture(SCREEN_TEXTURE, uv);
+    
+    // paper texture overlay
+    float paper = noise(UV * 8.0) * noise(UV * 16.0);
+    vec4 paper_layer = mix(screen, paper_color, paper * paper_strength);
+    
+    // white specks that flicker
+    float speck_time = floor(TIME * speck_speed);
+    float speck = step(speck_density, rand(UV + speck_time));
+    paper_layer.rgb += vec3(speck * 0.8);
+    
+    COLOR = paper_layer;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dcvjt"]
+shader = SubResource("Shader_qasit")
+shader_parameter/jitter_strength = 0.0030000001425
+shader_parameter/speck_density = 1.0
+shader_parameter/speck_speed = 0.1850000087875
+shader_parameter/paper_strength = 0.13600000646
+shader_parameter/paper_color = Color(0.29060054, 0.27992666, 0.2625816, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0joqj"]
+noise_type = 2
+seed = 50
+frequency = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qasit"]
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_0joqj")
+
+[node name="Flicker" type="Node2D" unique_id=1645216071]
+position = Vector2(-8, 0)
+scale = Vector2(-1.7337931, 4.273453)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1771046617]
+scale = Vector2(1, 0.99999994)
+stream = ExtResource("1_km3yx")
+autoplay = true
+
+[node name="OpeningCutscene" type="AudioStreamPlayer" parent="." unique_id=1145245846]
+stream = ExtResource("1_km3yx")
+autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=288821619]
+libraries/ = SubResource("AnimationLibrary_pvbl2")
+autoplay = &"Flicker"
+
+[node name="ColorRect" type="ColorRect" parent="AnimationPlayer" unique_id=1221466186]
+modulate = Color(0.32544088, 0.3254409, 0.32544088, 1)
+show_behind_parent = true
+top_level = true
+z_index = 1
+z_as_relative = false
+material = SubResource("ShaderMaterial_dcvjt")
+use_parent_material = true
+offset_left = -650.0
+offset_top = -360.0
+offset_right = -610.0
+offset_bottom = -320.0
+scale = Vector2(32.28, 18.32)
+color = Color(0.30588236, 0.30588236, 0.30588236, 0.44313726)
+
+[node name="TextureRect" type="TextureRect" parent="AnimationPlayer" unique_id=1105392737]
 visible = false
-texture = ExtResource("2_bl24s")
+modulate = Color(1, 1, 1, 0.12941177)
+offset_left = -651.0
+offset_top = -380.0
+offset_right = 651.0
+offset_bottom = 380.0
+texture = SubResource("NoiseTexture2D_qasit")
+expand_mode = 3
+script = ExtResource("3_km3yx")
 
-[node name="_3" type="Sprite2D" parent="AnimationPlayer"]
-texture = ExtResource("5_u4yv4")
+[node name="Homeroom" type="Sprite2D" parent="AnimationPlayer" unique_id=643720688]
+texture = ExtResource("2_dcvjt")
 
-[node name="_4_1" type="Sprite2D" parent="AnimationPlayer"]
-visible = false
-scale = Vector2(1.0020717, 1)
+[node name="DoYou" type="Sprite2D" parent="AnimationPlayer" unique_id=138852274]
+texture = ExtResource("3_0joqj")
 
-[node name="_4_2" type="Sprite2D" parent="AnimationPlayer"]
-scale = Vector2(1.0018986, 1)
-
-[node name="_5" type="Sprite2D" parent="AnimationPlayer"]
-visible = false
+[node name="Group" type="Sprite2D" parent="AnimationPlayer" unique_id=2039146958]
 scale = Vector2(1.0022562, 1.0270847)
 texture = ExtResource("6_p30sb")
 
-[node name="_55" type="Sprite2D" parent="AnimationPlayer"]
-visible = false
-texture = ExtResource("7_qcoa3")
+[node name="Gossip" type="Sprite2D" parent="AnimationPlayer" unique_id=590066558]
+texture = ExtResource("5_m3cpi")
 
-[node name="_6_1" type="Sprite2D" parent="AnimationPlayer"]
+[node name="Sad" type="Sprite2D" parent="AnimationPlayer" unique_id=1145374589]
 texture = ExtResource("7_53jq0")
 
-[node name="_6_2" type="Sprite2D" parent="AnimationPlayer"]
-texture = ExtResource("8_3q24f")
-
-[node name="_7" type="Sprite2D" parent="AnimationPlayer"]
-visible = false
+[node name="Sorry" type="Sprite2D" parent="AnimationPlayer" unique_id=511799355]
 texture = ExtResource("9_8ye5a")
 
-[node name="_8" type="Sprite2D" parent="AnimationPlayer"]
+[node name="Friends" type="Sprite2D" parent="AnimationPlayer" unique_id=510088375]
 visible = false
-texture = ExtResource("11_pvbl2")
+texture = ExtResource("8_0joqj")
 
-[node name="_9" type="Sprite2D" parent="AnimationPlayer"]
-visible = false
-texture = ExtResource("12_vi1t0")
-
-[node name="_10" type="Sprite2D" parent="AnimationPlayer"]
-visible = false
-texture = ExtResource("13_1titf")
+[node name="Camera2D" type="Camera2D" parent="AnimationPlayer" unique_id=885675483]
+zoom = Vector2(0.27, 0.27)
