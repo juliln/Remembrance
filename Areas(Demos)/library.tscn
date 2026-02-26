@@ -3,20 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://byque4w54oowj" path="res://Player/player.tscn" id="1_ct2lq"]
 [ext_resource type="Texture2D" uid="uid://ddh4tug7c046p" path="res://Assets/Tilesets/Library.png" id="2_ct2lq"]
 [ext_resource type="PackedScene" uid="uid://bsxdpd33nqw3j" path="res://Areas(Demos)/door.tscn" id="3_wda5m"]
-[ext_resource type="Texture2D" uid="uid://doo5fri2ip1s7" path="res://Assets/Tilesets/bookshelf.png" id="4_36nd1"]
 
 [node name="Library" type="Node2D" unique_id=1810042842]
-
-[node name="Player" parent="." unique_id=1770667363 instance=ExtResource("1_ct2lq")]
-z_index = 1
-position = Vector2(0, 184.00002)
-scale = Vector2(2.5, 2.5)
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1826505979]
-limit_left = -199
-limit_top = -198
-limit_right = 202
-limit_bottom = 171
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1938495296]
 texture = ExtResource("2_ct2lq")
@@ -35,30 +23,30 @@ position = Vector2(2, 78)
 [node name="Spawn" parent="Doors/Door_S" index="1" unique_id=478882881]
 position = Vector2(2, 34)
 
-[node name="bookshelves" type="Sprite2D" parent="." unique_id=563758797]
+[node name="librarycolliders" type="StaticBody2D" parent="." unique_id=1391217420]
 
-[node name="bookshelf1" type="Sprite2D" parent="bookshelves" unique_id=146798877]
-position = Vector2(-195, -53)
-texture = ExtResource("4_36nd1")
+[node name="wallcollider" type="CollisionPolygon2D" parent="librarycolliders" unique_id=293173436]
+position = Vector2(159, -152)
+polygon = PackedVector2Array(-479, 70, 161, 70, 161, 70, 161, -88, -479, -88, -479, 70, -479, 70)
 
-[node name="bookshelf2" type="Sprite2D" parent="bookshelves" unique_id=1628985592]
-position = Vector2(-195, 50)
-texture = ExtResource("4_36nd1")
+[node name="tablecollider1" type="CollisionPolygon2D" parent="librarycolliders" unique_id=700655634]
+polygon = PackedVector2Array(-61, 137, -57, 131, 52, 131, 59, 139, 59, 148, 53, 157, 48, 159, 36, 161, -41, 161, -51, 160, -58, 157, -63, 149, -64, 142)
 
-[node name="bookshelf3" type="Sprite2D" parent="bookshelves" unique_id=1549976599]
-position = Vector2(-195, 156)
-texture = ExtResource("4_36nd1")
+[node name="tablecollider2" type="CollisionPolygon2D" parent="librarycolliders" unique_id=746434749]
+polygon = PackedVector2Array(-59, 15, -55, 9, 54, 9, 61, 17, 61, 26, 55, 35, 50, 37, 38, 39, -39, 39, -49, 38, -56, 35, -61, 27, -62, 20)
 
-[node name="bookshelf4" type="Sprite2D" parent="bookshelves" unique_id=554020590]
-position = Vector2(193, -53)
-texture = ExtResource("4_36nd1")
+[node name="Node2D" type="Node2D" parent="." unique_id=573073205]
+y_sort_enabled = true
 
-[node name="bookshelf5" type="Sprite2D" parent="bookshelves" unique_id=528590640]
-position = Vector2(195, 50)
-texture = ExtResource("4_36nd1")
+[node name="Player" parent="Node2D" unique_id=1770667363 instance=ExtResource("1_ct2lq")]
+z_index = 1
+position = Vector2(0, 184.00002)
+scale = Vector2(2.5, 2.5)
 
-[node name="bookshelf6" type="Sprite2D" parent="bookshelves" unique_id=987512056]
-position = Vector2(195, 156)
-texture = ExtResource("4_36nd1")
+[node name="Camera2D" type="Camera2D" parent="Node2D/Player" unique_id=1826505979]
+limit_left = -199
+limit_top = -198
+limit_right = 202
+limit_bottom = 171
 
 [editable path="Doors/Door_S"]
