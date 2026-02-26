@@ -39,6 +39,11 @@ offset_bottom = 308.9988
 text = "OMG it's Kris. You were in Brianna's dorm! You always wore that cute dress to any event. 
 "
 
+[node name="Garden" type="Sprite2D" parent="." unique_id=2014716353]
+position = Vector2(406, -114)
+texture = ExtResource("4_jw1vb")
+offset = Vector2(-404, 103)
+
 [node name="Player" parent="." unique_id=1770667363 instance=ExtResource("3_1ky4f")]
 z_index = 1
 scale = Vector2(2, 2)
@@ -48,11 +53,6 @@ limit_left = -199
 limit_top = -198
 limit_right = 202
 limit_bottom = 171
-
-[node name="Garden" type="Sprite2D" parent="." unique_id=2014716353]
-position = Vector2(406, -114)
-texture = ExtResource("4_jw1vb")
-offset = Vector2(-404, 103)
 
 [node name="Teacher" type="Sprite2D" parent="." unique_id=1270586347]
 position = Vector2(31, -92)
