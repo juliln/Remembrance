@@ -9,7 +9,7 @@
 [node name="Player" parent="." unique_id=1770667363 instance=ExtResource("1_d2oc0")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(-292, 32)
+position = Vector2(-287, 50)
 scale = Vector2(2, 2)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1925276199]
@@ -24,27 +24,32 @@ texture = ExtResource("1_ofho2")
 [node name="Doors" type="Node" parent="." unique_id=533847224]
 
 [node name="Door_W" parent="Doors" unique_id=1849409617 instance=ExtResource("3_d4b86")]
-position = Vector2(-310, 36)
+position = Vector2(-308, 40)
 destination_level_tag = "garden"
 destination_door_tag = "N"
 
 [node name="CollisionShape2D" parent="Doors/Door_W" index="0" unique_id=1226092566]
-position = Vector2(-12, 0)
+position = Vector2(-13, 18)
 
 [node name="Spawn" parent="Doors/Door_W" index="1" unique_id=478882881]
-position = Vector2(30, 0)
+position = Vector2(21, 18)
 
 [node name="Door_E" parent="Doors" unique_id=1651224247 instance=ExtResource("3_d4b86")]
-position = Vector2(334, 38)
+position = Vector2(334, 40)
 destination_level_tag = "library"
 destination_door_tag = "S"
 spawn_direction = "down"
 
 [node name="CollisionShape2D" parent="Doors/Door_E" index="0" unique_id=1226092566]
-position = Vector2(-12, 0)
+position = Vector2(-16, 22)
 
 [node name="Spawn" parent="Doors/Door_E" index="1" unique_id=478882881]
-position = Vector2(-55, 0)
+position = Vector2(-49, 22)
+
+[node name="HallwayColliders" type="StaticBody2D" parent="." unique_id=2062692058]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HallwayColliders" unique_id=758447793]
+polygon = PackedVector2Array(-320, 27, -1, 27, 319, 27, 320, 27, 320, -90, -320, -90, -320, 26)
 
 [editable path="Doors/Door_W"]
 [editable path="Doors/Door_E"]

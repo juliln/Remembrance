@@ -98,10 +98,10 @@ destination_level_tag = "hallway"
 destination_door_tag = "W"
 
 [node name="CollisionShape2D" parent="Doors/Door_N" index="0" unique_id=1226092566]
-position = Vector2(0, -5)
+position = Vector2(3, 4)
 
 [node name="Spawn" parent="Doors/Door_N" index="1" unique_id=478882881]
-position = Vector2(0, 34)
+position = Vector2(3, 27)
 
 [node name="MapColliders" type="StaticBody2D" parent="." unique_id=181473396]
 
