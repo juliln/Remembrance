@@ -1,6 +1,5 @@
 extends Area2D
 class_name Interactable
-
 @export var dialogue_lines: Array[String] = []
 
 func interact(_player):
@@ -9,3 +8,4 @@ func interact(_player):
 		return
 	if dialogue_lines.size() > 0:
 		dm.show_ui(dialogue_lines)
+		dm.show_choices()

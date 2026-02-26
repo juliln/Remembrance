@@ -7,18 +7,44 @@
 [ext_resource type="Texture2D" uid="uid://bncwh4fd0rwnf" path="res://Assets/Sprites/Teacher_Ref.png" id="5_pgiba"]
 [ext_resource type="Script" uid="uid://c61paipajmrfb" path="res://Scripts/Interaction.gd" id="6_m82gj"]
 [ext_resource type="Texture2D" uid="uid://cccpx848ve0pd" path="res://Assets/Sprites/Bouncy_Ref.png" id="7_fsp1b"]
+[ext_resource type="Texture2D" uid="uid://4i1nwocbl7sb" path="res://Assets/UI_blue.png" id="7_keiqs"]
+[ext_resource type="Texture2D" uid="uid://6b2qtcmr7nw4" path="res://Assets/Sprites/Jaoa_Ref.png" id="8_uo2oc"]
 [ext_resource type="PackedScene" uid="uid://bsxdpd33nqw3j" path="res://Areas(Demos)/door.tscn" id="9_m1npx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pm4xv"]
-radius = 9.0
-height = 34.0
+radius = 11.11116
+height = 46.55594
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e622j"]
 
 [node name="World (demo)" type="Node2D" unique_id=1211579783]
 
+[node name="UI_Blue" type="CanvasLayer" parent="." unique_id=1713092286]
+visible = false
+script = ExtResource("1_keiqs")
+lines = Array[String](["Hi deary! What brings you around here? Not many people visit this garden.", "Ah, to be young, but not so young. To admire the flowers while not needing to tend ", "Were you one of my students? I’ve had so many of them, you know.", "", "", "", ""])
+
+[node name="UI" type="TextureRect" parent="UI_Blue" unique_id=1263058947]
+offset_left = 50.000004
+offset_top = 70.0
+offset_right = 1137.0
+offset_bottom = 535.0
+scale = Vector2(0.20000094, 0.20000094)
+texture = ExtResource("7_keiqs")
+
+[node name="DialogueLabel" type="Label" parent="UI_Blue/UI" unique_id=1230269974]
+layout_direction = 2
+layout_mode = 0
+offset_left = 74.99963
+offset_top = 259.9988
+offset_right = 762.99963
+offset_bottom = 308.9988
+text = "OMG it's Kris. You were in Brianna's dorm! You always wore that cute dress to any event. 
+"
+
 [node name="UI" type="CanvasLayer" parent="." unique_id=2108580879]
 script = ExtResource("1_keiqs")
+lines = Array[String](["", "", "", "", "", "", "", "", "", ""])
 
 [node name="UI" type="TextureRect" parent="UI" unique_id=1923303244]
 visible = false
@@ -28,6 +54,13 @@ offset_right = 1137.0
 offset_bottom = 535.0
 scale = Vector2(0.20000094, 0.20000094)
 texture = ExtResource("2_uo2oc")
+
+[node name="ChoiceLabel" type="Label" parent="UI/UI" unique_id=1463009389]
+layout_mode = 0
+offset_left = 79.99942
+offset_top = 389.99854
+offset_right = 119.99942
+offset_bottom = 412.99854
 
 [node name="DialogueLabel" type="Label" parent="UI/UI" unique_id=998307869]
 layout_direction = 2
@@ -55,7 +88,7 @@ texture = ExtResource("4_jw1vb")
 offset = Vector2(-404, 103)
 
 [node name="Teacher" type="Sprite2D" parent="." unique_id=1270586347]
-position = Vector2(31, -92)
+position = Vector2(31, -128)
 texture = ExtResource("5_pgiba")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Teacher" unique_id=1240177152]
@@ -68,26 +101,47 @@ shape = SubResource("CapsuleShape2D_pm4xv")
 [node name="Area2D" type="Area2D" parent="Teacher" unique_id=705479053]
 position = Vector2(0, -8)
 script = ExtResource("6_m82gj")
+dialogue_lines = Array[String](["Hi deary! What brings you around here? Not many people visit this garden.", "Ah, to be young, but not so young. To admire the flowers while not needing to tendthem.", "Were you one of my students? I’ve had so many of them, you know."])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teacher/Area2D" unique_id=717985247]
 shape = SubResource("CircleShape2D_e622j")
 
-[node name="Bouncy" type="Sprite2D" parent="." unique_id=170256896]
+[node name="Eve" type="Sprite2D" parent="." unique_id=170256896]
 position = Vector2(-85, -48)
 texture = ExtResource("7_fsp1b")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Bouncy" unique_id=1312556866]
+[node name="StaticBody2D" type="StaticBody2D" parent="Eve" unique_id=1312556866]
 position = Vector2(0, -8)
 scale = Vector2(0.7199969, 0.3007137)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bouncy/StaticBody2D" unique_id=441740437]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eve/StaticBody2D" unique_id=441740437]
 shape = SubResource("CapsuleShape2D_pm4xv")
 
-[node name="Area2D" type="Area2D" parent="Bouncy" unique_id=618494494]
+[node name="Area2D" type="Area2D" parent="Eve" unique_id=618494494]
 position = Vector2(0, -8)
 script = ExtResource("6_m82gj")
+dialogue_lines = Array[String](["OMG it’s Kaid! You were in Brianna’s dorm!  You always wore that cute dress to any event.", "Option 1: You remember that dress?", "But it was great! I’m sure you got your money’s worth with it! Say, have you seen Yang?He’s still wearing that scarf he always used to!", "Are you kidding? He was always there, even if at the back. Don’t you remember at the clubfestival, he got stuck in a booth because it was so crowded? It was hilarious!", ""])
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bouncy/Area2D" unique_id=607929427]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eve/Area2D" unique_id=607929427]
+shape = SubResource("CircleShape2D_e622j")
+
+[node name="Jaoa" type="Sprite2D" parent="." unique_id=425880271]
+position = Vector2(124, -61)
+texture = ExtResource("8_uo2oc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Jaoa" unique_id=1416920389]
+position = Vector2(0, -8)
+scale = Vector2(0.7199969, 0.3007137)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jaoa/StaticBody2D" unique_id=794045514]
+shape = SubResource("CapsuleShape2D_pm4xv")
+
+[node name="Area2D" type="Area2D" parent="Jaoa" unique_id=1684762014]
+position = Vector2(0, -8)
+script = ExtResource("6_m82gj")
+dialogue_lines = Array[String](["Hey there. You here for the alumni event too?", "Option 1: Yeah, I just drove here.", "I actually still live in town. Never left. But I’m not sure I should have come…", "Yeah, but the people. That’s why so many come. Why you probably came. But me? I don’tremember anyone."])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jaoa/Area2D" unique_id=47744591]
 shape = SubResource("CircleShape2D_e622j")
 
 [node name="Doors" type="Node" parent="." unique_id=515185397]

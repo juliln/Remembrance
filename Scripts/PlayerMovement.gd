@@ -10,7 +10,6 @@ func _physics_process(_delta: float) -> void:
 	_player_movement()
 
 func _player_movement() -> void:
-
 	var input_direction = Input.get_vector("Left", "Right", "Up", "Down")
 
 	if input_direction.length() != 0:
