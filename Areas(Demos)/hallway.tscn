@@ -29,7 +29,7 @@ destination_level_tag = "garden"
 destination_door_tag = "N"
 
 [node name="CollisionShape2D" parent="Doors/Door_W" index="0" unique_id=1226092566]
-position = Vector2(-25, 26.75)
+position = Vector2(-25, 27.5)
 
 [node name="Spawn" parent="Doors/Door_W" index="1" unique_id=478882881]
 position = Vector2(21, 17)
