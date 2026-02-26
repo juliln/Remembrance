@@ -13,10 +13,10 @@ position = Vector2(-287, 50)
 scale = Vector2(2, 2)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1925276199]
-limit_left = -199
-limit_top = -198
-limit_right = 202
-limit_bottom = 171
+limit_left = -320
+limit_top = -90
+limit_right = 320
+limit_bottom = 90
 
 [node name="Hallway" type="Sprite2D" parent="." unique_id=729532049]
 texture = ExtResource("1_ofho2")
@@ -29,10 +29,10 @@ destination_level_tag = "garden"
 destination_door_tag = "N"
 
 [node name="CollisionShape2D" parent="Doors/Door_W" index="0" unique_id=1226092566]
-position = Vector2(-13, 18)
+position = Vector2(-25, 26.75)
 
 [node name="Spawn" parent="Doors/Door_W" index="1" unique_id=478882881]
-position = Vector2(21, 18)
+position = Vector2(21, 17)
 
 [node name="Door_E" parent="Doors" unique_id=1651224247 instance=ExtResource("3_d4b86")]
 position = Vector2(334, 40)
@@ -41,15 +41,18 @@ destination_door_tag = "S"
 spawn_direction = "down"
 
 [node name="CollisionShape2D" parent="Doors/Door_E" index="0" unique_id=1226092566]
-position = Vector2(-16, 22)
+position = Vector2(-1, 26.625)
 
 [node name="Spawn" parent="Doors/Door_E" index="1" unique_id=478882881]
-position = Vector2(-49, 22)
+position = Vector2(-49, 17)
 
 [node name="HallwayColliders" type="StaticBody2D" parent="." unique_id=2062692058]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HallwayColliders" unique_id=758447793]
+[node name="wallcollider" type="CollisionPolygon2D" parent="HallwayColliders" unique_id=758447793]
 polygon = PackedVector2Array(-320, 27, -1, 27, 319, 27, 320, 27, 320, -90, -320, -90, -320, 26)
+
+[node name="hallwaymapboundary" type="CollisionPolygon2D" parent="HallwayColliders" unique_id=2089977611]
+polygon = PackedVector2Array(-320, 27, -320, 90, 320, 90, 320, 27, 322, 27, 322, 92, -322, 92, -322, 27)
 
 [editable path="Doors/Door_W"]
 [editable path="Doors/Door_E"]
