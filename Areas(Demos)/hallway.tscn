@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://7rc4nmtxtnxt"]
 
 [ext_resource type="PackedScene" uid="uid://byque4w54oowj" path="res://Player/player.tscn" id="1_d2oc0"]
-[ext_resource type="Texture2D" uid="uid://dc4m455beyf64" path="res://Assets/Tilesets/hallway.png" id="1_ofho2"]
+[ext_resource type="Texture2D" path="res://Assets/hallway.png" id="1_ofho2"]
 [ext_resource type="PackedScene" uid="uid://bsxdpd33nqw3j" path="res://Areas(Demos)/door.tscn" id="3_d4b86"]
 
 [node name="Hallway" type="Node2D" unique_id=121286954]
@@ -21,6 +21,7 @@ limit_right = 202
 limit_bottom = 171
 
 [node name="Hallway" type="Sprite2D" parent="." unique_id=729532049]
+position = Vector2(-1, -2)
 texture = ExtResource("1_ofho2")
 
 [node name="Doors" type="Node" parent="." unique_id=533847224]
@@ -34,7 +35,7 @@ destination_door_tag = "N"
 position = Vector2(-25, 27.5)
 
 [node name="Spawn" parent="Doors/Door_W" index="1" unique_id=478882881]
-position = Vector2(21, 17)
+position = Vector2(43, 27)
 
 [node name="Door_E" parent="Doors" unique_id=1651224247 instance=ExtResource("3_d4b86")]
 position = Vector2(334, 40)

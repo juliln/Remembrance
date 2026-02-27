@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cwqyk3efwo5hj"]
 
 [ext_resource type="Script" uid="uid://bo2xc71awl78h" path="res://Scripts/DialogueManager.gd" id="1_keiqs"]
-[ext_resource type="Texture2D" uid="uid://dvhtevhvodw87" path="res://Assets/Tilesets/UI.png" id="2_uo2oc"]
+[ext_resource type="Texture2D" path="res://Assets/UI.png" id="2_uo2oc"]
 [ext_resource type="PackedScene" uid="uid://byque4w54oowj" path="res://Player/player.tscn" id="3_1ky4f"]
 [ext_resource type="Texture2D" uid="uid://3mqh07vtmexr" path="res://Assets/Tilesets/bg_sample.png" id="4_jw1vb"]
 [ext_resource type="Texture2D" uid="uid://bncwh4fd0rwnf" path="res://Assets/Sprites/Teacher_Ref.png" id="5_pgiba"]
