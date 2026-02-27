@@ -1,0 +1,12 @@
+{
+	"speaker": "",
+	"start": {
+		"text": "",
+		"choices": [
+			{"text": "", "next_id": "1"},
+			]
+	},
+	"1": {
+		"speaker": "Old Sage" 
+	}
+}
