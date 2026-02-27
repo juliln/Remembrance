@@ -1,7 +1,7 @@
 extends Node
 
 @onready var interaction_area: Area2D = $"../InteractionArea"
-@onready var dm = $"../../UI"
+@onready var dm = DialogueManager
 
 func _process(_delta):
 	if dm.in_choice:
