@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://byque4w54oowj" path="res://Player/player.tscn" id="1_5a7ea"]
 [ext_resource type="PackedScene" path="res://scenes/treasure_chest.tscn" id="3_6h1bx"]
-[ext_resource type="Texture2D" uid="uid://3mqh07vtmexr" path="res://assets/bg_sample.png" id="4_k0juu"]
+[ext_resource type="Texture2D" uid="uid://3mqh07vtmexr" path="res://Assets/Tilesets/bg_sample.png" id="4_k0juu"]
 
 [node name="World" type="Node2D" unique_id=775343255]
 y_sort_enabled = true
