@@ -23,6 +23,17 @@ texture = ExtResource("1_ofho2")
 
 [node name="Doors" type="Node" parent="." unique_id=533847224]
 
+[node name="Door_N" parent="Doors" unique_id=212525298 instance=ExtResource("3_d4b86")]
+position = Vector2(0, -198)
+destination_level_tag = "hallway"
+destination_door_tag = "W"
+
+[node name="CollisionShape2D" parent="Doors/Door_N" index="0" unique_id=1226092566]
+position = Vector2(323, 267)
+
+[node name="Spawn" parent="Doors/Door_N" index="1" unique_id=478882881]
+position = Vector2(0, 34)
+
 [node name="Door_W" parent="Doors" unique_id=1849409617 instance=ExtResource("3_d4b86")]
 position = Vector2(-310, 36)
 destination_level_tag = "garden"
@@ -46,5 +57,6 @@ position = Vector2(-12, 0)
 [node name="Spawn" parent="Doors/Door_E" index="1" unique_id=478882881]
 position = Vector2(-55, 0)
 
+[editable path="Doors/Door_N"]
 [editable path="Doors/Door_W"]
 [editable path="Doors/Door_E"]

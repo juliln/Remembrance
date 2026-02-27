@@ -18,6 +18,7 @@ height = 46.55594
 [sub_resource type="CircleShape2D" id="CircleShape2D_e622j"]
 
 [node name="World (demo)" type="Node2D" unique_id=1211579783]
+position = Vector2(1, 0)
 
 [node name="UI_Blue" type="CanvasLayer" parent="." unique_id=1713092286]
 visible = false
@@ -75,6 +76,7 @@ text = "OMG it's Kris. You were in Brianna's dorm! You always wore that cute dre
 [node name="Player" parent="." unique_id=1770667363 instance=ExtResource("3_1ky4f")]
 z_index = 1
 scale = Vector2(2, 2)
+move_speed = null
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1961884604]
 limit_left = -199
