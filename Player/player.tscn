@@ -185,6 +185,9 @@ position = Vector2(-2.3841858e-07, -0.99999994)
 scale = Vector2(1.4, 1.4)
 shape = SubResource("CapsuleShape2D_l8h54")
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=112725859]
+zoom = Vector2(1.25, 1.25)
+
 [connection signal="area_entered" from="InteractionArea" to="Node2D" method="_on_interaction_area_area_entered"]
 [connection signal="area_exited" from="InteractionArea" to="Node2D" method="_on_interaction_area_area_exited"]
 [connection signal="area_shape_entered" from="InteractionArea" to="Node2D" method="_on_interaction_area_area_shape_entered"]

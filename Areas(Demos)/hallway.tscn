@@ -12,14 +12,6 @@ y_sort_enabled = true
 position = Vector2(-287, 50)
 scale = Vector2(2, 2)
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1925276199]
-position = Vector2(6, 0.5)
-limit_enabled = false
-limit_left = -199
-limit_top = -198
-limit_right = 202
-limit_bottom = 171
-
 [node name="Hallway" type="Sprite2D" parent="." unique_id=729532049]
 position = Vector2(-1, -2)
 texture = ExtResource("1_ofho2")

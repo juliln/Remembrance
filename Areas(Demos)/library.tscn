@@ -12,13 +12,6 @@ y_sort_enabled = true
 position = Vector2(0, 184.00002)
 scale = Vector2(2.5, 2.5)
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1826505979]
-position = Vector2(0, -6.1035153e-06)
-limit_left = -320
-limit_top = -240
-limit_right = 320
-limit_bottom = 240
-
 [node name="librarybackground" type="Sprite2D" parent="." unique_id=1938495296]
 position = Vector2(-2, 126)
 texture = ExtResource("2_ct2lq")

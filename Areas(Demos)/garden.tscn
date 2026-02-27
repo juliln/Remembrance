@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cwqyk3efwo5hj"]
 
 [ext_resource type="Script" uid="uid://bo2xc71awl78h" path="res://Scripts/DialogueManager.gd" id="1_keiqs"]
-[ext_resource type="Texture2D" path="res://Assets/UI.png" id="2_uo2oc"]
 [ext_resource type="PackedScene" uid="uid://byque4w54oowj" path="res://Player/player.tscn" id="3_1ky4f"]
 [ext_resource type="Texture2D" uid="uid://3mqh07vtmexr" path="res://Assets/Tilesets/bg_sample.png" id="4_jw1vb"]
 [ext_resource type="Texture2D" uid="uid://bncwh4fd0rwnf" path="res://Assets/Sprites/Teacher_Ref.png" id="5_pgiba"]
@@ -53,7 +52,7 @@ offset_top = 70.0
 offset_right = 1137.0
 offset_bottom = 535.0
 scale = Vector2(0.20000094, 0.20000094)
-texture = ExtResource("2_uo2oc")
+texture = ExtResource("7_keiqs")
 
 [node name="ChoiceLabel" type="Label" parent="UI/UI" unique_id=1463009389]
 layout_mode = 0
@@ -80,12 +79,6 @@ offset = Vector2(-404, 103)
 [node name="Player" parent="." unique_id=1770667363 instance=ExtResource("3_1ky4f")]
 z_index = 1
 scale = Vector2(2, 2)
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1961884604]
-limit_left = -199
-limit_top = -198
-limit_right = 202
-limit_bottom = 171
 
 [node name="Teacher" type="Sprite2D" parent="." unique_id=1270586347]
 position = Vector2(31, -128)
