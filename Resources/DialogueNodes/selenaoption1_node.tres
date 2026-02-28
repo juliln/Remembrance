@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueNode" format=3 uid="uid://yfphigu4sinn"]
+
+[ext_resource type="Script" path="res://Scripts/DialogueNode.gd" id="1_pkfuw"]
+
+[resource]
+script = ExtResource("1_pkfuw")
+lines = Array[String](["Kris: I’m here for the alumni event they are holding in the gym. But it hasn’t started yet, so I thought I’d wander around.", "Selena: Ah, to be young, but not so young. To admire the flowers while not needing to tend them.", "Kris: I’m not sure I really understand what you are talking about, but you remind me of a poetry teacher I had…", "Selena: Were you one of my students? I’ve had so many of them, you know.", "Kris: Kris remembers sitting in a poetry class for gen education, but not the teacher’s face. She never liked her poetry much. She hadn’t been much of a writer. But even with simple words, she’d at least been able to rhyme. And Yang loved them.", "Good Memory!"])
+metadata/_custom_type_script = "uid://c8s8ykoi1mruy"

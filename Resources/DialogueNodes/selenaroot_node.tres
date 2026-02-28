@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="DialogueNode" format=3 uid="uid://umaec2xkdv6r"]
+
+[ext_resource type="Script" path="res://Scripts/DialogueNode.gd" id="1_jgjug"]
+[ext_resource type="Resource" uid="uid://yfphigu4sinn" path="res://Resources/DialogueNodes/selenaoption1_node.tres" id="2_w8g27"]
+[ext_resource type="Resource" uid="uid://d5u778pkvfx7" path="res://Resources/DialogueNodes/selenaoption2_node.tres" id="3_ug3k3"]
+
+[resource]
+script = ExtResource("1_jgjug")
+lines = Array[String](["Selena: Hi deary! What brings you around here? Not many people visit this garden."])
+choices = Array[String](["Just wandering around.", "I used to come here."])
+branches = Array[ExtResource("1_jgjug")]([ExtResource("2_w8g27"), ExtResource("3_ug3k3")])
+metadata/_custom_type_script = "uid://c8s8ykoi1mruy"

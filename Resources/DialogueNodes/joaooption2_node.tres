@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueNode" format=3 uid="uid://dxi4a365cle8s"]
+
+[ext_resource type="Script" path="res://Scripts/DialogueNode.gd" id="1_f8763"]
+
+[resource]
+script = ExtResource("1_f8763")
+lines = Array[String](["Kris: I am. Say, do I remember you? Didn’t your name begin with a J?", "Joao: Uh, oh, uhm. Wow. I didn’t think anyone knew who I was. Yeah, it does start with a J. Joao.", "Kris: You were in the city service club! I think I drove you once to an event. Funny, how these small interactions stick with you.", "Joao: Yeah. Yeah. It really is crazy. Thanks for saying hi. He smiles.", "Kris: Kris remembers another smile from her past. A smile that had been very important at the time. She had said something funny in response to a teacher'steacher question, and everyone had laughed. But Yang, whose name she learned later, had given her such a wide grin.", "Good Memory!"])
+metadata/_custom_type_script = "uid://c8s8ykoi1mruy"

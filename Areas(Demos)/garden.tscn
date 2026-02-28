@@ -7,10 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://bncwh4fd0rwnf" path="res://Assets/Sprites/Teacher_Ref.png" id="5_pgiba"]
 [ext_resource type="Script" uid="uid://c61paipajmrfb" path="res://Scripts/Interaction.gd" id="6_m82gj"]
 [ext_resource type="Texture2D" uid="uid://cccpx848ve0pd" path="res://Assets/Sprites/Bouncy_Ref.png" id="7_fsp1b"]
+[ext_resource type="Resource" uid="uid://umaec2xkdv6r" path="res://Resources/DialogueNodes/selenaroot_node.tres" id="7_jw1vb"]
 [ext_resource type="Texture2D" uid="uid://4i1nwocbl7sb" path="res://Assets/UI_blue.png" id="7_keiqs"]
 [ext_resource type="Resource" uid="uid://b38nur55qnkpn" path="res://Resources/DialogueNodes/everoot_node.tres" id="8_1ky4f"]
 [ext_resource type="Texture2D" uid="uid://6b2qtcmr7nw4" path="res://Assets/Sprites/Jaoa_Ref.png" id="8_uo2oc"]
 [ext_resource type="PackedScene" uid="uid://bsxdpd33nqw3j" path="res://Areas(Demos)/door.tscn" id="9_m1npx"]
+[ext_resource type="Resource" uid="uid://bu1scwig4ussj" path="res://Resources/DialogueNodes/joaoroot_node.tres" id="10_1ky4f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pm4xv"]
 radius = 11.11116
@@ -74,12 +76,14 @@ offset_bottom = 308.9988
 text = "OMG it's Kris. You were in Brianna's dorm! You always wore that cute dress to any event. 
 "
 autowrap_mode = 2
+autowrap_trim_flags = 0
 clip_text = true
 
 [node name="Player" parent="." unique_id=1770667363 instance=ExtResource("3_1ky4f")]
 z_index = 1
 scale = Vector2(2, 2)
 
+<<<<<<< Updated upstream
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1961884604]
 limit_left = -199
 limit_top = -198
@@ -92,21 +96,41 @@ texture = ExtResource("4_jw1vb")
 offset = Vector2(-404, 103)
 
 [node name="Teacher" type="Sprite2D" parent="." unique_id=1270586347]
+=======
+[node name="Selena" type="Sprite2D" parent="." unique_id=1270586347]
+>>>>>>> Stashed changes
 position = Vector2(31, -128)
 texture = ExtResource("5_pgiba")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Teacher" unique_id=1240177152]
+[node name="StaticBody2D" type="StaticBody2D" parent="Selena" unique_id=1240177152]
 position = Vector2(0, -8)
 scale = Vector2(0.7199969, 0.3007137)
 
+<<<<<<< Updated upstream
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teacher/StaticBody2D" unique_id=1521469460]
 shape = SubResource("CapsuleShape2D_pm4xv")
 
 [node name="Area2D" type="Area2D" parent="Teacher" unique_id=705479053]
 position = Vector2(0, -8)
-script = ExtResource("6_m82gj")
+=======
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Selena/StaticBody2D" unique_id=1521469460]
+position = Vector2(1.3888948, 26.603376)
+scale = Vector2(1, 1.3)
+shape = SubResource("CapsuleShape2D_pm4xv")
 
+[node name="Area2D" type="Area2D" parent="Selena" unique_id=705479053]
+position = Vector2(1, 0)
+scale = Vector2(1, 1.3)
+>>>>>>> Stashed changes
+script = ExtResource("6_m82gj")
+dialogue = ExtResource("7_jw1vb")
+
+<<<<<<< Updated upstream
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teacher/Area2D" unique_id=717985247]
+=======
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Selena/Area2D" unique_id=717985247]
+scale = Vector2(1, 1.3)
+>>>>>>> Stashed changes
 shape = SubResource("CircleShape2D_e622j")
 
 [node name="Eve" type="Sprite2D" parent="." unique_id=170256896]
@@ -128,22 +152,23 @@ dialogue = ExtResource("8_1ky4f")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Eve/Area2D" unique_id=607929427]
 shape = SubResource("CircleShape2D_e622j")
 
-[node name="Jaoa" type="Sprite2D" parent="." unique_id=425880271]
+[node name="Joao" type="Sprite2D" parent="." unique_id=425880271]
 position = Vector2(124, -61)
 texture = ExtResource("8_uo2oc")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Jaoa" unique_id=1416920389]
+[node name="StaticBody2D" type="StaticBody2D" parent="Joao" unique_id=1416920389]
 position = Vector2(0, -8)
 scale = Vector2(0.7199969, 0.3007137)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Jaoa/StaticBody2D" unique_id=794045514]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Joao/StaticBody2D" unique_id=794045514]
 shape = SubResource("CapsuleShape2D_pm4xv")
 
-[node name="Area2D" type="Area2D" parent="Jaoa" unique_id=1684762014]
+[node name="Area2D" type="Area2D" parent="Joao" unique_id=1684762014]
 position = Vector2(0, -8)
 script = ExtResource("6_m82gj")
+dialogue = ExtResource("10_1ky4f")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Jaoa/Area2D" unique_id=47744591]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Joao/Area2D" unique_id=47744591]
 shape = SubResource("CircleShape2D_e622j")
 
 [node name="Doors" type="Node" parent="." unique_id=515185397]
@@ -159,9 +184,9 @@ position = Vector2(0, -5)
 [node name="Spawn" parent="Doors/Door_N" index="1" unique_id=478882881]
 position = Vector2(0, 34)
 
-[connection signal="area_entered" from="Teacher/Area2D" to="UI" method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Teacher/Area2D" to="UI" method="_on_area_2d_area_exited"]
-[connection signal="area_shape_entered" from="Teacher/Area2D" to="UI" method="_on_area_2d_area_shape_entered"]
-[connection signal="area_shape_exited" from="Teacher/Area2D" to="UI" method="_on_area_2d_area_shape_exited"]
+[connection signal="area_entered" from="Selena/Area2D" to="UI" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Selena/Area2D" to="UI" method="_on_area_2d_area_exited"]
+[connection signal="area_shape_entered" from="Selena/Area2D" to="UI" method="_on_area_2d_area_shape_entered"]
+[connection signal="area_shape_exited" from="Selena/Area2D" to="UI" method="_on_area_2d_area_shape_exited"]
 
 [editable path="Doors/Door_N"]

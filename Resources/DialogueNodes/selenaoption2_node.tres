@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueNode" format=3 uid="uid://d5u778pkvfx7"]
+
+[ext_resource type="Script" path="res://Scripts/DialogueNode.gd" id="1_mmsk6"]
+
+[resource]
+script = ExtResource("1_mmsk6")
+lines = Array[String](["Kris: I used to come this garden when I was student here. It was so quiet and peaceful.", "Selena: Oh, is that so? One of the few, then. You weren’t that one that brought the boyfriend to smooch here, were you?", "Kris: Oh, no, no, no. I almost always came by myself. I would sit underneath that tree right over there.", "Selena: I remember you now! You were in Duncan’s poetry class, my colleague. I’d see you walk out of class and sit there, staring at the sky for ages.", "Kris: Kris remembers how blue the sky had been those days. How sometimes that blue represented the melancholic uncertainty of her future. And how sometimes it felt like the world was open to anything. Like when she had brought Yang here and they’d laid on the grass, talking of their loftiest goals.", "Good Memory!"])
+metadata/_custom_type_script = "uid://c8s8ykoi1mruy"

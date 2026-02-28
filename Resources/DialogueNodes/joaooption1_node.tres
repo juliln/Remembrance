@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueNode" format=3 uid="uid://b7aiyn00y3haa"]
+
+[ext_resource type="Script" path="res://Scripts/DialogueNode.gd" id="1_tw64m"]
+
+[resource]
+script = ExtResource("1_tw64m")
+lines = Array[String](["Kris: Yeah, I drove from upstate yesterday. It was a long and rough drive. Where did you come from?", "Joao: I actually still live in town. Never left. But I’m not sure I should have come…", "Kris: Why not? It’s nothing too crazy, mostly just snacks, opportunities, and a few campus tours.", "Joao: Yeah, but the people. That’s why so many come. Why you probably came. But me? I don’t remember anyone.", "Kris: Kris remembers when she left the school herself. She had scrolled through her contact list on every platform, determined to remove anyone she didn’t remember or care for. When her furtive typing had ended, only two people had remained. Neither had been Yang. ", "Bad Memory!"])
+metadata/_custom_type_script = "uid://c8s8ykoi1mruy"
