@@ -23,7 +23,7 @@ func _player_movement() -> void:
 	move_and_slide()
 
 func _ready():
-	NavigationManager.on_trigger_player_spawn.connect(_on_spawn)
+	NavigationManager.on_trigger_player_spawn.connect(_on_spawn);
 
 	
 func _on_spawn(position: Vector2, direction: String):

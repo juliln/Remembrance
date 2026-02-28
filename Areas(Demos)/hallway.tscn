@@ -18,6 +18,17 @@ texture = ExtResource("1_ofho2")
 
 [node name="Doors" type="Node" parent="." unique_id=533847224]
 
+[node name="Door_N" parent="Doors" unique_id=212525298 instance=ExtResource("3_d4b86")]
+position = Vector2(0, -198)
+destination_level_tag = "hallway"
+destination_door_tag = "W"
+
+[node name="CollisionShape2D" parent="Doors/Door_N" index="0" unique_id=1226092566]
+position = Vector2(323, 267)
+
+[node name="Spawn" parent="Doors/Door_N" index="1" unique_id=478882881]
+position = Vector2(0, 34)
+
 [node name="Door_W" parent="Doors" unique_id=1849409617 instance=ExtResource("3_d4b86")]
 position = Vector2(-308, 40)
 destination_level_tag = "garden"
@@ -49,5 +60,6 @@ polygon = PackedVector2Array(-320, 27, -1, 27, 319, 27, 320, 27, 320, -90, -320,
 [node name="hallwaymapboundary" type="CollisionPolygon2D" parent="HallwayColliders" unique_id=2089977611]
 polygon = PackedVector2Array(-320, 27, -320, 90, 320, 90, 320, 27, 322, 27, 322, 92, -322, 92, -322, 27)
 
+[editable path="Doors/Door_N"]
 [editable path="Doors/Door_W"]
 [editable path="Doors/Door_E"]

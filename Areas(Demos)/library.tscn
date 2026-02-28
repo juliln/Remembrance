@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://byque4w54oowj" path="res://Player/player.tscn" id="1_ct2lq"]
 [ext_resource type="Texture2D" uid="uid://incb7e40msye" path="res://Assets/Tilesets/library_sample.png" id="2_ct2lq"]
 [ext_resource type="PackedScene" uid="uid://bsxdpd33nqw3j" path="res://Areas(Demos)/door.tscn" id="3_wda5m"]
+[ext_resource type="Texture2D" uid="uid://bj5rtmbwsrsad" path="res://Assets/bookshelf.png" id="4_36nd1"]
 
 [node name="Library" type="Node2D" unique_id=1810042842]
 
@@ -48,5 +49,35 @@ polygon = PackedVector2Array(-320, -82, -320, 240, 320, 240, 320, -82, 322, -82,
 
 [node name="bookshelves" type="Node2D" parent="." unique_id=573073205]
 y_sort_enabled = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1267022294]
+position = Vector2(308, -197)
+texture = ExtResource("4_36nd1")
+offset = Vector2(-106, 135)
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1883266572]
+position = Vector2(308, -197)
+texture = ExtResource("4_36nd1")
+offset = Vector2(-506, 135)
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=802181150]
+position = Vector2(308, -197)
+texture = ExtResource("4_36nd1")
+offset = Vector2(-103, 265)
+
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=490456662]
+position = Vector2(308, -197)
+texture = ExtResource("4_36nd1")
+offset = Vector2(-506, 265)
+
+[node name="Sprite2D6" type="Sprite2D" parent="." unique_id=438916496]
+position = Vector2(308, -197)
+texture = ExtResource("4_36nd1")
+offset = Vector2(-98, 396)
+
+[node name="Sprite2D7" type="Sprite2D" parent="." unique_id=1112773106]
+position = Vector2(308, -197)
+texture = ExtResource("4_36nd1")
+offset = Vector2(-513, 398)
 
 [editable path="Doors/Door_S"]

@@ -4,6 +4,9 @@ extends Node
 @onready var dm = DialogueManager
 
 func _process(_delta):
+	if dm == null:
+		return
+
 	if dm.in_choice:
 		if Input.is_action_just_pressed("ui_up"): dm.navigate(-1)
 		if Input.is_action_just_pressed("ui_down"): dm.navigate(1)

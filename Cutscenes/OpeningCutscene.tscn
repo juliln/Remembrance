@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://bghba07mdgab3"]
 
-[ext_resource type="AudioStream" uid="uid://dc0xikso28ejn" path="res://Audio/OpeningCutscene.ogg" id="1_km3yx"]
-[ext_resource type="Animation" uid="uid://cbewp01dkv8p2" path="res://Resources/Flicker.tres" id="1_vi1t0"]
-[ext_resource type="Texture2D" uid="uid://dqpd3o0owqrsy" path="res://Assets/Cgs/First_Scene.png" id="2_dcvjt"]
-[ext_resource type="Texture2D" uid="uid://btr21c7fxab4m" path="res://Assets/Cgs/_2.png" id="3_0joqj"]
-[ext_resource type="Script" uid="uid://b1rwl6m13d173" path="res://Cutscenes/film_grain.gd" id="3_km3yx"]
-[ext_resource type="Texture2D" uid="uid://cv1ovg31n0mg1" path="res://Assets/Cgs/_4.png" id="5_m3cpi"]
-[ext_resource type="Texture2D" uid="uid://cau5twir4axl2" path="res://Assets/Cgs/_5.png" id="6_p30sb"]
-[ext_resource type="Texture2D" uid="uid://cwqrib4eahk4j" path="res://Assets/Cgs/_6.png" id="7_53jq0"]
-[ext_resource type="Texture2D" uid="uid://dus3meuw6a5f5" path="res://Assets/Cgs/_8.png" id="8_0joqj"]
-[ext_resource type="Texture2D" uid="uid://fh52cu1y1v8m" path="res://Assets/Cgs/_7.png" id="9_8ye5a"]
+[ext_resource type="AudioStream" uid="uid://dc0xikso28ejn" path="res://Audio/OpeningCutscene.ogg" id="1_3b016"]
+[ext_resource type="Animation" uid="uid://cbewp01dkv8p2" path="res://Resources/Flicker.tres" id="2_skn7m"]
+[ext_resource type="Script" path="res://Cutscenes/film_grain.gd" id="3_r2trs"]
+[ext_resource type="Texture2D" uid="uid://dqpd3o0owqrsy" path="res://Assets/cgs/First_Scene.png" id="4_brgcw"]
+[ext_resource type="Texture2D" uid="uid://btr21c7fxab4m" path="res://Assets/cgs/_2.png" id="5_vtvxh"]
+[ext_resource type="Texture2D" uid="uid://cau5twir4axl2" path="res://Assets/cgs/_5.png" id="6_ilfax"]
+[ext_resource type="Texture2D" uid="uid://cv1ovg31n0mg1" path="res://Assets/cgs/_4.png" id="7_n3gm3"]
+[ext_resource type="Texture2D" uid="uid://cwqrib4eahk4j" path="res://Assets/cgs/_6.png" id="8_xl3v4"]
+[ext_resource type="Texture2D" uid="uid://fh52cu1y1v8m" path="res://Assets/cgs/_7.png" id="9_x15wg"]
+[ext_resource type="Texture2D" uid="uid://dus3meuw6a5f5" path="res://Assets/cgs/_8.png" id="10_2ut0s"]
 
 [sub_resource type="Animation" id="Animation_0joqj"]
 length = 0.001
@@ -40,7 +40,7 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pvbl2"]
 _data = {
-&"Flicker": ExtResource("1_vi1t0"),
+&"Flicker": ExtResource("2_skn7m"),
 &"RESET": SubResource("Animation_0joqj")
 }
 
@@ -118,11 +118,11 @@ scale = Vector2(-1.7337931, 4.273453)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1771046617]
 scale = Vector2(1, 0.99999994)
-stream = ExtResource("1_km3yx")
+stream = ExtResource("1_3b016")
 autoplay = true
 
 [node name="OpeningCutscene" type="AudioStreamPlayer" parent="." unique_id=1145245846]
-stream = ExtResource("1_km3yx")
+stream = ExtResource("1_3b016")
 autoplay = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=288821619]
@@ -153,30 +153,30 @@ offset_right = 651.0
 offset_bottom = 380.0
 texture = SubResource("NoiseTexture2D_qasit")
 expand_mode = 3
-script = ExtResource("3_km3yx")
+script = ExtResource("3_r2trs")
 
 [node name="Homeroom" type="Sprite2D" parent="AnimationPlayer" unique_id=643720688]
-texture = ExtResource("2_dcvjt")
+texture = ExtResource("4_brgcw")
 
 [node name="DoYou" type="Sprite2D" parent="AnimationPlayer" unique_id=138852274]
-texture = ExtResource("3_0joqj")
+texture = ExtResource("5_vtvxh")
 
 [node name="Group" type="Sprite2D" parent="AnimationPlayer" unique_id=2039146958]
 scale = Vector2(1.0022562, 1.0270847)
-texture = ExtResource("6_p30sb")
+texture = ExtResource("6_ilfax")
 
 [node name="Gossip" type="Sprite2D" parent="AnimationPlayer" unique_id=590066558]
-texture = ExtResource("5_m3cpi")
+texture = ExtResource("7_n3gm3")
 
 [node name="Sad" type="Sprite2D" parent="AnimationPlayer" unique_id=1145374589]
-texture = ExtResource("7_53jq0")
+texture = ExtResource("8_xl3v4")
 
 [node name="Sorry" type="Sprite2D" parent="AnimationPlayer" unique_id=511799355]
-texture = ExtResource("9_8ye5a")
+texture = ExtResource("9_x15wg")
 
 [node name="Friends" type="Sprite2D" parent="AnimationPlayer" unique_id=510088375]
 visible = false
-texture = ExtResource("8_0joqj")
+texture = ExtResource("10_2ut0s")
 
 [node name="Camera2D" type="Camera2D" parent="AnimationPlayer" unique_id=885675483]
 zoom = Vector2(0.27, 0.27)
