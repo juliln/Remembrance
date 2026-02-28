@@ -12,7 +12,7 @@ func go_to_opening():
 	await get_tree().process_frame
 	var anim = get_tree().current_scene.get_node("AnimationPlayer")
 	anim.animation_finished.connect(func(_n): 
-		go_to_world()
+		go_to_world(), CONNECT_ONE_SHOT
 	)
 	
 func go_to_world():

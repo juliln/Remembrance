@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="DialogueNode" format=3 uid="uid://b38nur55qnkpn"]
+
+[ext_resource type="Script" uid="uid://c8s8ykoi1mruy" path="res://Scripts/DialogueNode.gd" id="1_3vir6"]
+[ext_resource type="Resource" uid="uid://bo0r6d23i0q3c" path="res://Resources/DialogueNodes/eveoption1_node.tres" id="2_38p8u"]
+[ext_resource type="Resource" uid="uid://gfqqdgkag8sm" path="res://Resources/DialogueNodes/eveoption2_node.tres" id="3_dbpkk"]
+
+[resource]
+script = ExtResource("1_3vir6")
+lines = Array[String](["OMG it’s Kris! You were in Brianna’s dorm! You always wore that cute dress to any event. "])
+choices = Array[String](["You remember that dress?", "The blue or yellow one?"])
+branches = Array[ExtResource("1_3vir6")]([ExtResource("2_38p8u"), ExtResource("3_dbpkk")])
+metadata/_custom_type_script = "uid://c8s8ykoi1mruy"

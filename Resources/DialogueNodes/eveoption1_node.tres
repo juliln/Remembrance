@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueNode" format=3 uid="uid://bo0r6d23i0q3c"]
+
+[ext_resource type="Script" uid="uid://c8s8ykoi1mruy" path="res://Scripts/DialogueNode.gd" id="1_7b8j3"]
+
+[resource]
+script = ExtResource("1_7b8j3")
+lines = Array[String](["Kris: I didn’t realize anyone remembered that dress. It became kind of old and frayed by the time college ended... ", "Eve: But it was great! I’m sure you got your money’s worth with it! Say, have you seen Yang? He’s still wearing that scarf he always used to! ", "Kris: Wait, Yang actually is here? Are you sure? Didn’t he never like events? ", "Eve: Are you kidding? He was always there, even if at the back. Don’t you remember at the club festival, he got stuck in a booth because it was so crowded? It was hilarious! ", "Kris: Kris remembers Yang, long scarf dangling, turning blue as he reached out from a tight crowd, their friends cackling with laughter.", "Good Memory!"])
+metadata/_custom_type_script = "uid://c8s8ykoi1mruy"

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueNode" format=3 uid="uid://gfqqdgkag8sm"]
+
+[ext_resource type="Script" uid="uid://c8s8ykoi1mruy" path="res://Scripts/DialogueNode.gd" id="1_348lb"]
+
+[resource]
+script = ExtResource("1_348lb")
+lines = Array[String](["Kris: Was it the blue one or the yellow one? I can’t remember which one I wore more.", "Eve: The yellow one of course! I don’t think I ever saw you in a blue one. Did you wear it to Psi Theta Sigma parties? Those were the ones I attended.", "Kris: I mostly went to those because Brianna and her gang dragged me there so often, but I sometimes went elsewhere…", "Eve: Kris, are you OK? You look a bit pale. Maybe you should head inside?", "Kris: Kris remembers the blue dress. The one she wore at the little party she had been invited to by a classmate. She hadn’t known anyone else there and had sat in the corner. And tried to catch the attention of Yang, who sat in the other corner but never noticed her.", "Bad Memory!"])
+metadata/_custom_type_script = "uid://c8s8ykoi1mruy"
