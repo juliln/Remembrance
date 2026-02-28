@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://c61paipajmrfb" path="res://Scripts/Interaction.gd" id="6_m82gj"]
 [ext_resource type="Texture2D" uid="uid://cccpx848ve0pd" path="res://Assets/Sprites/Bouncy_Ref.png" id="7_fsp1b"]
 [ext_resource type="Texture2D" uid="uid://4i1nwocbl7sb" path="res://Assets/UI_blue.png" id="7_keiqs"]
+[ext_resource type="Resource" uid="uid://b38nur55qnkpn" path="res://Resources/DialogueNodes/everoot_node.tres" id="8_1ky4f"]
 [ext_resource type="Texture2D" uid="uid://6b2qtcmr7nw4" path="res://Assets/Sprites/Jaoa_Ref.png" id="8_uo2oc"]
 [ext_resource type="PackedScene" uid="uid://bsxdpd33nqw3j" path="res://Areas(Demos)/door.tscn" id="9_m1npx"]
 
@@ -72,11 +73,12 @@ offset_right = 762.99963
 offset_bottom = 308.9988
 text = "OMG it's Kris. You were in Brianna's dorm! You always wore that cute dress to any event. 
 "
+autowrap_mode = 2
+clip_text = true
 
 [node name="Player" parent="." unique_id=1770667363 instance=ExtResource("3_1ky4f")]
 z_index = 1
 scale = Vector2(2, 2)
-move_speed = null
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1961884604]
 limit_left = -199
@@ -103,7 +105,6 @@ shape = SubResource("CapsuleShape2D_pm4xv")
 [node name="Area2D" type="Area2D" parent="Teacher" unique_id=705479053]
 position = Vector2(0, -8)
 script = ExtResource("6_m82gj")
-dialogue_lines = Array[String](["Hi deary! What brings you around here? Not many people visit this garden.", "Ah, to be young, but not so young. To admire the flowers while not needing to tendthem.", "Were you one of my students? I’ve had so many of them, you know."])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teacher/Area2D" unique_id=717985247]
 shape = SubResource("CircleShape2D_e622j")
@@ -122,7 +123,7 @@ shape = SubResource("CapsuleShape2D_pm4xv")
 [node name="Area2D" type="Area2D" parent="Eve" unique_id=618494494]
 position = Vector2(0, -8)
 script = ExtResource("6_m82gj")
-dialogue_lines = Array[String](["OMG it’s Kaid! You were in Brianna’s dorm!  You always wore that cute dress to any event.", "Option 1: You remember that dress?", "But it was great! I’m sure you got your money’s worth with it! Say, have you seen Yang?He’s still wearing that scarf he always used to!", "Are you kidding? He was always there, even if at the back. Don’t you remember at the clubfestival, he got stuck in a booth because it was so crowded? It was hilarious!", ""])
+dialogue = ExtResource("8_1ky4f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Eve/Area2D" unique_id=607929427]
 shape = SubResource("CircleShape2D_e622j")
@@ -141,7 +142,6 @@ shape = SubResource("CapsuleShape2D_pm4xv")
 [node name="Area2D" type="Area2D" parent="Jaoa" unique_id=1684762014]
 position = Vector2(0, -8)
 script = ExtResource("6_m82gj")
-dialogue_lines = Array[String](["Hey there. You here for the alumni event too?", "Option 1: Yeah, I just drove here.", "I actually still live in town. Never left. But I’m not sure I should have come…", "Yeah, but the people. That’s why so many come. Why you probably came. But me? I don’tremember anyone."])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jaoa/Area2D" unique_id=47744591]
 shape = SubResource("CircleShape2D_e622j")

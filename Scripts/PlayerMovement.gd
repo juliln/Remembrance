@@ -7,6 +7,13 @@ var current_dir = 0
 var sprint = 1.5
 
 func _physics_process(_delta: float) -> void:
+	var dm = get_tree().root.get_node("World (demo)/UI")
+	
+	if dm.is_open:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+	
 	_player_movement()
 
 func _player_movement() -> void:
