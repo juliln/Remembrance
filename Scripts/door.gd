@@ -9,7 +9,7 @@ class_name Door
 @onready var spawn = $Spawn
 
 func _ready():
-	call_deferred("go_to_opening")
+	pass
 
 func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if body is Player:

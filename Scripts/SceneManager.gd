@@ -1,8 +1,8 @@
 extends Node
 
-const OPENING = "res://scenes/OpeningCutscene.tscn"
+const OPENING = "res://Cutscenes/OpeningCutscene.tscn"
 const WORLD = "res://Areas(Demos)/garden.tscn"
-const ENDING = "res://scenes/Happy_End.tscn"
+const ENDING = "res://Cutscenes/Happy_End.tscn"
 
 func _ready():
 	call_deferred("go_to_opening")
@@ -20,6 +20,9 @@ func go_to_world():
 	get_tree().change_scene_to_file(WORLD)
 
 func go_to_ending():
+	print("go to ending")
 	get_tree().change_scene_to_file(ENDING)
+	print("changed scene")
 	await get_tree().node_added
-	get_tree().current_scene.get_node("AnimationPlayer").animation_finished.connect(func(_n): get_tree().quit())
+	print("get tree")
+	get_tree().current_scene.get_node("End_Scene/AnimationPlayer").animation_finished.connect(func(_n): get_tree().quit())
