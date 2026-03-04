@@ -4,7 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://incb7e40msye" path="res://Assets/Tilesets/library_sample.png" id="2_ct2lq"]
 [ext_resource type="PackedScene" uid="uid://bsxdpd33nqw3j" path="res://Areas(Demos)/door.tscn" id="3_wda5m"]
 [ext_resource type="Texture2D" uid="uid://bj5rtmbwsrsad" path="res://Assets/bookshelf.png" id="4_36nd1"]
-[ext_resource type="Script" path="res://Scripts/DoorEnding.gd" id="4_wda5m"]
+[ext_resource type="Script" uid="uid://bhjvb7vmffs3g" path="res://Scripts/DoorEnding.gd" id="4_wda5m"]
+[ext_resource type="AudioStream" uid="uid://bhbxf6tau1ue8" path="res://Audio/Tapered out.wav" id="6_8sfme"]
 
 [node name="Library" type="Node2D" unique_id=1810042842]
 
@@ -91,6 +92,10 @@ offset = Vector2(-98, 396)
 position = Vector2(308, -197)
 texture = ExtResource("4_36nd1")
 offset = Vector2(-513, 398)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=951224819]
+stream = ExtResource("6_8sfme")
+autoplay = true
 
 [editable path="Doors/Door_S"]
 [editable path="Doors/Door_Petal_Tree"]
