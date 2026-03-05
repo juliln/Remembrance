@@ -10,7 +10,7 @@
 
 [sub_resource type="Animation" id="Animation_0ct28"]
 resource_name = "Happy_End"
-length = 10.133333
+length = 11.966666
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -18,10 +18,10 @@ tracks/0/path = NodePath("AnimationPlayer/1:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.20000002, 0.60313284, 0.8031329, 1.2079002, 1.4079002, 1.8223606, 2.0223606, 2.4262671, 2.6262672),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.20000002, 0.60313284, 0.8031329, 1.2079002, 1.4079002, 1.8223606, 2.0223606, 2.4262671, 2.6262672, 3.0666666, 3.2666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [true, false, true, false, true, false, true, false, true, false]
+"values": [true, false, true, false, true, false, true, false, true, false, true, false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -30,10 +30,10 @@ tracks/1/path = NodePath("AnimationPlayer/2:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.20000002, 0.4, 0.60313284, 0.8031329, 1.0031328, 1.2079002, 1.4079002, 1.6079001, 1.8223606, 2.0223606, 2.2223606, 2.4262671, 2.6262672, 2.8262672),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.20000002, 0.4, 0.60313284, 0.8031329, 1.0031328, 1.2079002, 1.4079002, 1.6079001, 1.8223606, 2.0223606, 2.2223606, 2.4262671, 2.6262672, 2.8262672, 3.0666666, 3.2666667, 3.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [false, true, false, false, true, false, false, true, false, false, true, false, false, true, false]
+"values": [false, true, false, false, true, false, false, true, false, false, true, false, false, true, false, false, true, false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -42,10 +42,10 @@ tracks/2/path = NodePath("AnimationPlayer/3:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.60313284, 1.0031328, 1.2079002, 1.6079001, 1.8223606, 2.2223606, 2.4262671, 2.8262672),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.60313284, 1.0031328, 1.2079002, 1.6079001, 1.8223606, 2.2223606, 2.4262671, 2.8262672, 3.0666666, 3.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [false, true, false, true, false, true, false, true, false, true]
+"values": [false, true, false, true, false, true, false, true, false, true, false, true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -54,7 +54,7 @@ tracks/3/path = NodePath("AnimationPlayer/4:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 3.0666666),
+"times": PackedFloat32Array(0, 3.6333334),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -66,7 +66,7 @@ tracks/4/path = NodePath("AnimationPlayer/6:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 5.233333),
+"times": PackedFloat32Array(0, 6.5333333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -78,7 +78,7 @@ tracks/5/path = NodePath("AnimationPlayer/7:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 7.52101, 7.787677, 8.071477, 8.362559, 8.62353, 8.914613, 9.175584, 9.466666, 9.767367, 10.05845),
+"times": PackedFloat32Array(0, 9.329227, 9.595894, 9.879694, 10.170776, 10.431747, 10.72283, 10.983801, 11.274883, 11.575584, 11.866667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [false, true, false, true, false, true, false, true, false, true, false]
@@ -90,7 +90,7 @@ tracks/6/path = NodePath("AnimationPlayer/8:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 7.52101, 7.787677, 8.071477, 8.362559, 8.62353, 8.914613, 9.175584, 9.466666, 9.767367, 10.05845),
+"times": PackedFloat32Array(0, 9.329227, 9.595894, 9.879694, 10.170776, 10.431747, 10.72283, 10.983801, 11.274883, 11.575584, 11.866667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [false, false, true, false, true, false, true, false, true, false, true]
@@ -217,3 +217,6 @@ texture = ExtResource("6_g6no8")
 
 [node name="8" type="Sprite2D" parent="End_Scene/AnimationPlayer" unique_id=1527221159]
 texture = ExtResource("7_u4fvq")
+
+[node name="EndCamera" type="Camera2D" parent="End_Scene" unique_id=1865455440]
+zoom = Vector2(0.25, 0.25)
