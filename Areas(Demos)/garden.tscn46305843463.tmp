@@ -108,7 +108,6 @@ shape = SubResource("CapsuleShape2D_pm4xv")
 [node name="Area2D" type="Area2D" parent="Eve" unique_id=618494494]
 position = Vector2(0, -8)
 script = ExtResource("6_m82gj")
-npc_name = "Eve"
 dialogue_lines = Array[String](["OMG it’s Kaid! You were in Brianna’s dorm!  You always wore that cute dress to any event.", " I didn’t realize anyone remembered that dress. It became kind of old and frayed by the time college ended... ", "But it was great! I’m sure you got your money’s worth with it! Say, have you seen Yang?He’s still wearing that scarf he always used to!", "Are you kidding? He was always there, even if at the back. Don’t you remember at the clubfestival, he got stuck in a booth because it was so crowded? It was hilarious!", ""])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Eve/Area2D" unique_id=607929427]
