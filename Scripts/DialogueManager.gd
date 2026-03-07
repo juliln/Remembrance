@@ -38,7 +38,6 @@ func next_line():
 	else:
 		label.text = lines[current_line]
 
-
 func hide_ui():
 	is_open = false
 	label.visible = false
