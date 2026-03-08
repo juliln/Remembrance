@@ -112,7 +112,7 @@ shape = SubResource("CapsuleShape2D_pm4xv")
 position = Vector2(0, -8)
 script = ExtResource("6_m82gj")
 npc_name = "Eve"
-dialogue_lines = Array[String](["OMG it’s Kaid!  You were in Brianna’s dorm! You always wore that cute dress to any event. ", " Kaid: I didn’t realize anyone remembered that dress. It became kind of old and frayed by the time college ended... ", "But it was great! I’m sure you got your money’s worth with it! Say, have you seen Yang? He’s still wearing that scarf he always used to! ", "Kaid: Wait, Yang actually is here? Are you sure? Didn’t he never like events?", "Are you kidding? He was always there, even if at the back. Don’t you remember at the club festival, he got stuck in a booth because it was so crowded? It was hilarious! ", "Kaid: Kaid remembers Yang, long scarf dangling, turning blue as he reached out from a tight crowd, their friends cackling with laughter."])
+dialogue_lines = Array[String](["OMG it’s Kaid!  You were in Brianna’s dorm! You always wore that cute dress to any event. ", "Kaid: I didn’t realize anyone remembered that dress. It became kind of old and frayed by the time college ended... ", "But it was great! I’m sure you got your money’s worth with it! Say, have you seen Yang? He’s still wearing that scarf he always used to! ", "Kaid: Wait, Yang actually is here? Are you sure? Didn’t he never like events?", "Are you kidding? He was always there, even if at the back. Don’t you remember at the club festival, he got stuck in a booth because it was so crowded? It was hilarious! ", "Kaid remembers Yang, long scarf dangling, turning blue as he reached out from a tight crowd, their friends cackling with laughter."])
 choices_lines = Array[String](["You remember that dress?"])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Eve/Area2D" unique_id=607929427]
@@ -133,7 +133,7 @@ shape = SubResource("CapsuleShape2D_pm4xv")
 position = Vector2(0, -8)
 script = ExtResource("6_m82gj")
 npc_name = "Jaoa"
-dialogue_lines = Array[String](["Hey there. You here for the alumni event too? ", "Kaid: I am. Say, do I remember you? Didn’t your name begin with a J?", "Uh, oh, uhm. Wow. I didn’t think anyone knew who I was. Yeah, it does start with a J. Joao.", "Kaid: You were in the city service club! I think I drove you once to an event. Funny, how these small interactions stick with you.", "Yeah. Yeah. It really is crazy. Thanks for saying hi. He smiles.", "Kaid: Kaid remembers another smile from her past. A smile that had been very important at the time. She had said something funny in response to a teacher's question, and everyone had laughed. But Yang, whose name she learned later, had given her such a wide grin."])
+dialogue_lines = Array[String](["Hey there. You here for the alumni event too? ", "Kaid: I am. Say, do I remember you? Didn’t your name begin with a J?", "Uh, oh, uhm. Wow. I didn’t think anyone knew who I was. Yeah, it does start with a J. Joao.", "Kaid: You were in the city service club! I think I drove you once to an event. Funny, how these small interactions stick with you.", "Yeah. Yeah. It really is crazy. Thanks for saying hi. He smiles.", "Kaid remembers another smile from her past. A smile that had been very important at the time. She had said something funny in response to a teacher's question, and everyone had laughed. But Yang, whose name she learned later, had given her such a wide grin."])
 choices_lines = Array[String](["Wait, do I remember you?"])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jaoa/Area2D" unique_id=47744591]
