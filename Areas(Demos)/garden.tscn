@@ -4,12 +4,16 @@
 [ext_resource type="AudioStream" uid="uid://bhbxf6tau1ue8" path="res://Audio/Tapered out.wav" id="1_uo2oc"]
 [ext_resource type="PackedScene" uid="uid://byque4w54oowj" path="res://Player/player.tscn" id="3_1ky4f"]
 [ext_resource type="Texture2D" uid="uid://3mqh07vtmexr" path="res://Assets/Tilesets/bg_sample.png" id="4_jw1vb"]
+[ext_resource type="FontFile" uid="uid://bo1nnw8nu7pxu" path="res://Fonts/VT323-Regular.ttf" id="5_fsp1b"]
 [ext_resource type="Texture2D" uid="uid://bncwh4fd0rwnf" path="res://Assets/Sprites/Teacher_Ref.png" id="5_pgiba"]
 [ext_resource type="Script" uid="uid://c61paipajmrfb" path="res://Scripts/Interaction.gd" id="6_m82gj"]
 [ext_resource type="Texture2D" uid="uid://cccpx848ve0pd" path="res://Assets/Sprites/Bouncy_Ref.png" id="7_fsp1b"]
 [ext_resource type="Texture2D" uid="uid://4i1nwocbl7sb" path="res://Assets/UI_blue.png" id="7_keiqs"]
 [ext_resource type="Texture2D" uid="uid://6b2qtcmr7nw4" path="res://Assets/Sprites/Jaoa_Ref.png" id="8_uo2oc"]
 [ext_resource type="PackedScene" uid="uid://bsxdpd33nqw3j" path="res://Areas(Demos)/door.tscn" id="9_m1npx"]
+[ext_resource type="Texture2D" uid="uid://cs0x8q0u7np1o" path="res://Assets/Sprites/Selena_profile.png" id="9_m82gj"]
+[ext_resource type="Texture2D" uid="uid://c4e687ybjtn2q" path="res://Assets/Sprites/Eve_profile.png" id="10_pgiba"]
+[ext_resource type="Texture2D" uid="uid://c2bhmug14ywxw" path="res://Assets/Sprites/Jaoa_profile.png" id="11_jw1vb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pm4xv"]
 radius = 11.11116
@@ -29,6 +33,7 @@ script = ExtResource("1_keiqs")
 lines = Array[String](["OMG its Brianna", "", "", "", "", "", "", "", "", ""])
 
 [node name="UI" type="TextureRect" parent="UI" unique_id=1923303244]
+visible = false
 offset_left = 50.000004
 offset_top = 70.0
 offset_right = 1137.0
@@ -36,13 +41,18 @@ offset_bottom = 535.0
 scale = Vector2(0.20000094, 0.20000094)
 texture = ExtResource("7_keiqs")
 
+[node name="Profile" type="Sprite2D" parent="UI/UI" unique_id=1487802020]
+position = Vector2(987.4951, 102.49954)
+scale = Vector2(4.843742, 4.8437285)
+
 [node name="NameLabel" type="Label" parent="UI/UI" unique_id=1988108576]
 layout_mode = 0
 offset_left = 9.999924
 offset_top = 149.99933
 offset_right = 94.99953
 offset_bottom = 184.99918
-theme_override_font_sizes/font_size = 22
+theme_override_fonts/font = ExtResource("5_fsp1b")
+theme_override_font_sizes/font_size = 32
 text = "Name"
 
 [node name="ChoiceLabel" type="Label" parent="UI/UI" unique_id=1463009389]
@@ -51,7 +61,8 @@ offset_left = 79.99942
 offset_top = 389.99854
 offset_right = 119.99942
 offset_bottom = 412.99854
-theme_override_font_sizes/font_size = 22
+theme_override_fonts/font = ExtResource("5_fsp1b")
+theme_override_font_sizes/font_size = 32
 
 [node name="DialogueLabel" type="Label" parent="UI/UI" unique_id=998307869]
 layout_direction = 2
@@ -60,7 +71,8 @@ offset_left = 74.99963
 offset_top = 259.9988
 offset_right = 1019.9952
 offset_bottom = 419.99802
-theme_override_font_sizes/font_size = 22
+theme_override_fonts/font = ExtResource("5_fsp1b")
+theme_override_font_sizes/font_size = 32
 text = "OMG it's Kris. You were in Brianna's dorm! You always wore that cute dress to any event. 
 "
 autowrap_mode = 2
@@ -93,6 +105,7 @@ position = Vector2(1, 0)
 scale = Vector2(1, 1.3)
 script = ExtResource("6_m82gj")
 npc_name = "Selena"
+profile = ExtResource("9_m82gj")
 dialogue_lines = Array[String](["Hi deary! What brings you around here? Not many people visit this garden.", "Kaid: I’m here for the alumni event they are holding in the gym. But it hasn’t started yet, so I thought I’d wander around.", "Ah, to be young, but not so young. To admire the flowers while not needing to tend them.", "Kaid: I’m not sure I really understand what you are talking about, but you remind me of a poetry teacher I had…", "Were you one of my students? I’ve had so many of them, you know.", "Kaid remembers sitting in a poetry class for gen education, but not the teacher’s face. She never liked her poetry much. She hadn’t been much of a writer. But even with simple words, she’d at least been able to rhyme. And Yang loved them."])
 choices_lines = Array[String](["Just wandering around."])
 
@@ -115,6 +128,7 @@ shape = SubResource("CapsuleShape2D_pm4xv")
 position = Vector2(0, -8)
 script = ExtResource("6_m82gj")
 npc_name = "Eve"
+profile = ExtResource("10_pgiba")
 dialogue_lines = Array[String](["OMG it’s Kaid!  You were in Brianna’s dorm! You always wore that cute dress to any event. ", "Kaid: I didn’t realize anyone remembered that dress. It became kind of old and frayed by the time college ended... ", "But it was great! I’m sure you got your money’s worth with it! Say, have you seen Yang? He’s still wearing that scarf he always used to! ", "Kaid: Wait, Yang actually is here? Are you sure? Didn’t he never like events?", "Are you kidding? He was always there, even if at the back. Don’t you remember at the club festival, he got stuck in a booth because it was so crowded? It was hilarious! ", "Kaid remembers Yang, long scarf dangling, turning blue as he reached out from a tight crowd, their friends cackling with laughter."])
 choices_lines = Array[String](["You remember that dress?"])
 
@@ -136,6 +150,7 @@ shape = SubResource("CapsuleShape2D_pm4xv")
 position = Vector2(0, -8)
 script = ExtResource("6_m82gj")
 npc_name = "Jaoa"
+profile = ExtResource("11_jw1vb")
 dialogue_lines = Array[String](["Hey there. You here for the alumni event too? ", "Kaid: I am. Say, do I remember you? Didn’t your name begin with a J?", "Uh, oh, uhm. Wow. I didn’t think anyone knew who I was. Yeah, it does start with a J. Joao.", "Kaid: You were in the city service club! I think I drove you once to an event. Funny, how these small interactions stick with you.", "Yeah. Yeah. It really is crazy. Thanks for saying hi. He smiles.", "Kaid remembers another smile from her past. A smile that had been very important at the time. She had said something funny in response to a teacher's question, and everyone had laughed. But Yang, whose name she learned later, had given her such a wide grin."])
 choices_lines = Array[String](["Wait, do I remember you?"])
 

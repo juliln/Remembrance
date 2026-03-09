@@ -5,12 +5,13 @@ var in_choice: bool = false
 var selected_choice: int = 0
 var names: Array[String] = []
 
+@onready var profile = $UI/Profile
 @onready var name_label = $UI/NameLabel
 @export var lines: Array[String] = []
 @onready var label = $UI/DialogueLabel
 @onready var choice_label = $UI/ChoiceLabel
 
-func show_ui(new_lines: Array[String], name: String = ""):
+func show_ui(new_lines: Array[String], name: String = "", texture2: Texture2D = null):
 	lines = new_lines
 
 	current_line = 0
@@ -19,6 +20,10 @@ func show_ui(new_lines: Array[String], name: String = ""):
 	label.visible = true
 	$UI.visible = true
 	name_label.text = name
+	
+	if texture2: 
+		profile.texture = texture2
+
 	
 func show_choices(choice_list: Array[String]):
 	in_choice = true
