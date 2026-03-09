@@ -1,6 +1,7 @@
 extends Area2D
 class_name Interactable
 @export var npc_name: String = ""
+@export var profile: Texture2D = null  # ADD THIS
 @export var dialogue_lines: Array[String] = []
 @export var choices_lines: Array[String] = ["Continue"]
 
@@ -15,6 +16,6 @@ func interact(_player):
 			dm.next_line()
 		return
 	if dialogue_lines.size() > 0:
-		dm.show_ui(dialogue_lines, npc_name)
+		dm.show_ui(dialogue_lines, npc_name, profile)
 		dm.show_choices(choices_lines)
 		
